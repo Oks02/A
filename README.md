@@ -29,16 +29,16 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 
 | # | What | Where |
 |---|------|-------|
-| 1 | **Fozzy Group metrics**: `[X]` creatives produced and `[Y%]` faster | Results section (`metric-1`, `metric-2`) |
+| 1 | **Fozzy Group metrics**: `[X]` creatives produced and `[Y%]` faster. They appear in the Results section and in the yellow ticker under the hero | Results (`metric-1`, `metric-2`) and ticker |
 | 2 | **Fozzy Group quote**: quote, name, title. You can also delete the `<figure>` | Results section (`quote`) |
-| 3 | **Fozzy Group sign-off**: written OK to name them publicly. If they allow it, swap the "Fozzy Group" text under the hero (`fozzy-logo`) for their logo. If not yet, the `fozzy-approval` comment has ready-made anonymous wording ("a major Ukrainian retail group") | Results section (`fozzy-approval`) |
+| 3 | **Fozzy Group sign-off**: written OK to name them publicly. If they allow it, consider adding their logo to the Results section. If not yet, the `fozzy-approval` comment has ready-made anonymous wording ("a major Ukrainian retail group") | Results section (`fozzy-approval`) |
 | 4 | **Turnaround promise**: `[within 48 hours]` | Closing CTA copy |
 | 5 | **Form endpoint**: Netlify needs nothing. On Vercel, set `action` to a Formspree, Basin or Tally URL | `<form class="lead-form">` (`form-endpoint`) |
-| 6 | **Final CTA copy**: "See It With Your Own Catalog" appears 3×, plus "Try Your Catalog" in the nav | Hero, form button, sticky mobile bar |
+| 6 | **Final CTA copy**: "See it with your own catalog" appears 3×, plus "Try your catalog" in the nav | Hero, form button, sticky mobile bar |
 | 7 | **Hero visual**: currently an animated CSS mock. To swap in a real video, GIF or screenshot, use the snippet in the comment | Hero (`hero-visual`) |
 | 8 | **Domain**: replace `https://adminix.example` in the canonical, `og:url` and `og:image` tags. `og:image` **must** be an absolute URL for LinkedIn | `<head>` (`domain`) |
 | 9 | **Contact**: confirm `hello@adminix.io`, and add the real LinkedIn URL | Footer (`contact`) |
-| 10 | **Logo**: the blue "A" mark is an approximation of the Adminix logo. Paste the real SVG into the `<symbol id="logo-mark">` at the top of `index.html` (the nav and footer both use it), and update `assets/favicon.svg` and the OG image | `logo` |
+| 10 | **Logo**: the "A" mark (recolored white for the blue header) is an approximation of the Adminix logo. Paste the real SVG into the `<symbol id="logo-mark">` at the top of `index.html` (the nav and footer both use it), and update `assets/favicon.svg` and the OG image | `logo` |
 
 Also check:
 - The success message ("we'll be in touch within one business day") is a commitment. Edit it in `main.js` if you can't keep it.
@@ -49,5 +49,5 @@ Also check:
 
 ## Customizing
 
-- **Colors and fonts:** the tokens at the top of `styles.css`. They match adminix.io: `--blue` (#2563EB) for buttons and accents, `--bg` (light gray) for the page, Inter Tight for headings and Inter for body text. The red and yellow inside the hero mock are the sample retailer's brand colors, not Adminix's.
+- **Colors and fonts:** the tokens at the top of `styles.css`. The look is retail signage: `--signal` (Adminix blue at full saturation) for the hero and closing bands, `--ink` for How It Works and the footer, `--tag` (shelf-tag yellow) for buttons, the price tag, the ticker and the case-study band. Headlines use Archivo at a condensed width; labels and data use JetBrains Mono. The red inside the posters is the sample retailer's color, not Adminix's.
 - **Hero mock products:** the `skus` array in `main.js` and the matching `<li>` rows and `.prod-N` SVGs in `index.html`.

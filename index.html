@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adminix — Promo creatives from your product feed, in minutes</title>
   <meta name="description" content="Adminix connects to your ERP, e-commerce feed or Excel and turns every SKU into brand-compliant promo posters and banners for every channel. Creative automation built for retail chains.">
-  <meta name="theme-color" content="#FFFFFF">
+  <meta name="theme-color" content="#1D3BF5">
 
   <!-- PLACEHOLDER(domain): replace https://adminix.example with the production URL (canonical + og:url + og:image). -->
   <link rel="canonical" href="https://adminix.example/">
@@ -22,7 +22,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -31,27 +31,27 @@
 
   <!-- Shared logo mark (referenced with <use>) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <!-- PLACEHOLDER(logo): approximation of the Adminix "A" mark. Paste the real logo SVG here. -->
+    <!-- PLACEHOLDER(logo): approximation of the Adminix "A" mark, recolored for the blue header. Paste the real logo SVG here. -->
     <symbol id="logo-mark" viewBox="0 0 32 32">
-      <path d="M15.6 1.5 3 30.5l12.6-7.2z" fill="#38BDF8"/>
-      <path d="M16.4 1.5 29 30.5l-12.6-7.2z" fill="#1D4ED8"/>
-      <path d="M15.6 1.5 9.2 16.2l6.4-2.4z" fill="#7DD3FC"/>
+      <path d="M15.6 1.5 3 30.5l12.6-7.2z" fill="#7DD3FC"/>
+      <path d="M16.4 1.5 29 30.5l-12.6-7.2z" fill="currentColor"/>
+      <path d="M15.6 1.5 9.2 16.2l6.4-2.4z" fill="#E0F2FE"/>
     </symbol>
   </svg>
 
   <header class="nav">
-    <div class="container nav-inner">
+    <div class="wrap nav-inner">
       <a class="logo" href="#top" aria-label="Adminix home">
         <svg class="logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
         <span>Adminix</span>
       </a>
       <nav class="nav-links" aria-label="Sections">
-        <a href="#how">How It Works</a>
-        <a href="#use-cases">Use Cases</a>
+        <a href="#how">How it works</a>
+        <a href="#use-cases">Use cases</a>
         <a href="#results">Results</a>
-        <a href="#who">Who It's For</a>
+        <a href="#who">Who it's for</a>
       </nav>
-      <a class="btn btn-nav" href="#start">Try Your Catalog</a>
+      <a class="btn btn-sm" href="#start">Try your catalog</a>
     </div>
   </header>
 
@@ -59,186 +59,139 @@
 
     <!-- 1. HERO ============================================================ -->
     <section class="hero" id="top">
-      <div class="container">
+      <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="pill">Creative automation for retail chains</p>
-          <h1>From Product Feed To Finished Promo Banner — In Minutes, Not Days</h1>
-          <p class="lede">Connect your ERP, e-commerce feed or Excel and turn every SKU into brand-compliant posters and banners for every channel — built for retail trade marketing teams.</p>
-          <div class="hero-actions">
+          <p class="kicker"><b>Retail</b> Creative automation for retail chains</p>
+          <h1>From product feed to finished promo banner</h1>
+          <div class="tag-wrap"><span class="tag">In minutes, not days</span></div>
+          <p class="lede">Adminix connects to your ERP, e-commerce feed or Excel and turns every SKU into brand-compliant posters and banners for every channel, inside the templates your designers approved.</p>
+          <div class="actions">
             <!-- PLACEHOLDER(cta-copy): primary CTA text not final. -->
-            <a class="btn btn-lg" href="#start">See It With Your Own Catalog</a>
-            <a class="btn btn-lg btn-ghost" href="#how">How It Works</a>
+            <a class="btn" href="#start">See it with your own catalog →</a>
+            <a class="btn btn-ghost" href="#how">How it works</a>
           </div>
         </div>
 
         <!--
-          PLACEHOLDER(hero-visual): animated HTML/CSS mock of the Adminix creative editor.
-          To use a real asset instead, replace the whole <div class="mock"> with e.g.:
+          PLACEHOLDER(hero-visual): animated HTML/CSS mock of a feed turning into posters.
+          To use a real asset instead, replace the whole <div class="machine"> with e.g.:
             <video class="hero-video" src="assets/hero.mp4" poster="assets/hero-poster.jpg"
                    autoplay muted loop playsinline aria-label="Adminix generating promo banners"></video>
-          or <img class="hero-video" src="assets/hero.webp" alt="..." width="1600" height="1000">
           (.hero-video is already styled in styles.css)
         -->
-        <div class="mock" data-placeholder="Hero visual (CSS mock)" role="img" aria-label="Illustration of the Adminix editor: product feed rows on the left are turned into promo posters in several formats, with connected data sources and brand checks on the right">
-          <!-- Left: feed -->
-          <aside class="m-side">
-            <div class="m-tabs"><span class="is-on">Product Feed</span><span>AI Assistant</span></div>
-            <div class="m-label">promo_w14.xlsx <em>128 SKUs</em></div>
-            <ul class="feed-rows">
-              <li class="is-active"><span class="name">Olive oil 1 L</span><span class="price">219</span></li>
-              <li><span class="name">Ground coffee 250 g</span><span class="price">149</span></li>
-              <li><span class="name">Oat granola 500 g</span><span class="price">99</span></li>
-              <li class="dim"><span class="name">Sparkling water 6×</span><span class="price">84</span></li>
-              <li class="dim"><span class="name">Dark chocolate 90 g</span><span class="price">59</span></li>
-            </ul>
-          </aside>
-
-          <!-- Center: canvas -->
-          <div class="m-main">
-            <div class="m-top">
-              <div>
-                <div class="m-title">Spring Promo · Week 14</div>
-                <div class="m-sub">4:5 · 1:1 · 9:16 — web, app, social, in-store</div>
+        <div class="machine" data-placeholder="Hero visual (CSS mock)" role="img" aria-label="Illustration: rows from a product spreadsheet become promo posters in three formats">
+          <div class="file"><span>promo_w14.xlsx</span><span><span class="mock-count">37</span>/128 done</span></div>
+          <div class="feed">
+            <div class="row head"><span>SKU</span><span>Item</span><span>Was</span><span>Now</span></div>
+            <div class="row on"><span>48213</span><span>Olive oil 1 L</span><span class="was">289</span><span class="now">219</span></div>
+            <div class="row"><span>51027</span><span>Ground coffee 250 g</span><span class="was">189</span><span class="now">149</span></div>
+            <div class="row"><span>39954</span><span>Oat granola 500 g</span><span class="was">129</span><span class="now">99</span></div>
+            <div class="row extra"><span>40118</span><span>Sparkling water 6×</span><span class="was">99</span><span class="now">84</span></div>
+          </div>
+          <div class="flow"><b>Auto-compose</b><i>✓ brand rules</i></div>
+          <div class="posters">
+            <div class="poster p45" data-sku="0">
+              <span class="brand">YOUR BRAND</span>
+              <span class="stamp" data-off>−24%</span>
+              <div class="art">
+                <svg class="prod prod-0" viewBox="0 0 80 120" aria-hidden="true"><rect x="32" y="4" width="16" height="14" rx="3" fill="#2E3B1F"/><path d="M30 18h20v14c8 6 12 14 12 24v54a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6V56c0-10 4-18 12-24z" fill="#7A8B3A"/><rect x="22" y="62" width="36" height="32" rx="3" fill="#F4ECD8"/><circle cx="40" cy="78" r="8" fill="#7A8B3A"/></svg>
+                <svg class="prod prod-1" viewBox="0 0 80 120" aria-hidden="true"><path d="M16 22 24 8h32l8 14v86a6 6 0 0 1-6 6H22a6 6 0 0 1-6-6z" fill="#5B3A29"/><path d="M16 22h48" stroke="#3E271B" stroke-width="3"/><rect x="24" y="50" width="32" height="38" rx="3" fill="#F4ECD8"/><ellipse cx="40" cy="69" rx="7" ry="10" fill="#5B3A29"/></svg>
+                <svg class="prod prod-2" viewBox="0 0 80 120" aria-hidden="true"><path d="M14 16h44l8 6v92H14z" fill="#E9A92C"/><path d="M58 16l8 6v92l-8-4z" fill="#C98C18"/><rect x="20" y="30" width="32" height="10" rx="2" fill="#7A3B12"/><circle cx="36" cy="76" r="16" fill="#F4ECD8"/><circle cx="31" cy="73" r="3" fill="#C98C18"/><circle cx="39" cy="80" r="3" fill="#C98C18"/></svg>
               </div>
-              <span class="m-chip m-chip-green">Active</span>
-              <span class="m-btn">Export All</span>
+              <span class="name" data-name>Olive oil 1 L</span>
+              <span class="price"><s data-was>289</s><b data-now>219 ₴</b></span>
+              <span class="fmt">4:5</span>
             </div>
-            <div class="stage">
-              <div class="poster poster-story" aria-hidden="true">
-                <div class="p-tag">−24%</div>
-                <div class="p-blob"></div>
-                <div class="p-line"></div><div class="p-line short"></div>
-                <span class="fmt">9:16</span>
-              </div>
-              <div class="poster poster-main" data-sku="0">
-                <div class="p-brand">YOUR BRAND</div>
-                <div class="p-badge">−24%</div>
-                <div class="p-product">
-                  <svg class="prod prod-0" viewBox="0 0 80 120" aria-hidden="true"><rect x="32" y="4" width="16" height="14" rx="3" fill="#2E3B1F"/><path d="M30 18h20v14c8 6 12 14 12 24v54a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6V56c0-10 4-18 12-24z" fill="#7A8B3A"/><rect x="22" y="62" width="36" height="32" rx="3" fill="#F4ECD8"/><circle cx="40" cy="78" r="8" fill="#7A8B3A"/></svg>
-                  <svg class="prod prod-1" viewBox="0 0 80 120" aria-hidden="true"><path d="M16 22 24 8h32l8 14v86a6 6 0 0 1-6 6H22a6 6 0 0 1-6-6z" fill="#5B3A29"/><path d="M16 22h48" stroke="#3E271B" stroke-width="3"/><rect x="24" y="50" width="32" height="38" rx="3" fill="#F4ECD8"/><ellipse cx="40" cy="69" rx="7" ry="10" fill="#5B3A29"/><path d="M40 60v18" stroke="#F4ECD8" stroke-width="1.5"/></svg>
-                  <svg class="prod prod-2" viewBox="0 0 80 120" aria-hidden="true"><path d="M14 16h44l8 6v92H14z" fill="#E9A92C"/><path d="M58 16l8 6v92l-8-4z" fill="#C98C18"/><rect x="20" y="30" width="32" height="10" rx="2" fill="#7A3B12"/><circle cx="36" cy="76" r="16" fill="#F4ECD8"/><circle cx="31" cy="73" r="3" fill="#C98C18"/><circle cx="39" cy="80" r="3" fill="#C98C18"/><circle cx="40" cy="70" r="2.5" fill="#7A3B12"/></svg>
-                </div>
-                <div class="p-name">Olive oil 1 L</div>
-                <div class="p-price"><s class="p-old">289</s><strong class="p-new">219</strong><span class="p-cur">₴</span></div>
-                <span class="fmt">4:5</span>
-              </div>
-              <div class="poster poster-square" aria-hidden="true">
-                <div class="p-blob"></div>
-                <div class="p-col"><div class="p-tag">−24%</div><div class="p-line"></div><div class="p-line short"></div></div>
-                <span class="fmt">1:1</span>
-              </div>
+            <div class="poster p11">
+              <span class="off" data-off>−24%</span>
+              <span class="name" data-name>Olive oil 1 L</span>
+              <span class="fmt">1:1</span>
             </div>
-            <div class="m-stats">
-              <div><span>Generated</span><strong><span class="mock-count">37</span>/128</strong></div>
-              <div><span>Formats</span><strong>3</strong></div>
-              <div><span>Channels</span><strong>5</strong></div>
-              <div><span>Brand checks</span><strong class="ok">Passed</strong></div>
+            <div class="poster p916">
+              <span class="off" data-off>−24%</span>
+              <span class="price" data-now>219 ₴</span>
+              <span class="fmt">9:16</span>
             </div>
           </div>
-
-          <!-- Right: settings -->
-          <aside class="m-panel">
-            <div class="m-panel-title">Data Sources</div>
-            <div class="m-src"><b>ERP / CRM</b><span class="m-chip m-chip-green">Connected</span></div>
-            <div class="m-src"><b>E-commerce feed</b><span class="m-chip m-chip-green">Connected</span></div>
-            <div class="m-src"><b>Excel upload</b><span class="m-chip m-chip-green">Connected</span></div>
-            <div class="m-panel-title">Brand Rules</div>
-            <ul class="m-checks">
-              <li>Logo safe zone</li>
-              <li>Fonts &amp; colors</li>
-              <li>Legal copy</li>
-              <li>Price format</li>
-            </ul>
-          </aside>
-        </div>
-
-        <div class="trusted">
-          <p>In live pilot with</p>
-          <!-- PLACEHOLDER(fozzy-logo): replace text with Fozzy Group logo (if approved). -->
-          <span class="trusted-logo" data-placeholder="Fozzy Group logo">Fozzy Group</span>
         </div>
       </div>
     </section>
 
+    <!-- Shelf-edge ticker: pilot + proof points -->
+    <!-- PLACEHOLDER(fozzy-logo): "Fozzy Group" is named here and in Results — confirm approval. -->
+    <div class="ticker" role="note" aria-label="Live pilot with Fozzy Group">
+      <div class="track" aria-hidden="true">
+        <span>● Live pilot with Fozzy Group</span><span><em class="ph" data-placeholder="Metric 1">[X]</em> creatives produced</span><span><em class="ph" data-placeholder="Metric 2">[Y%]</em> faster to market</span><span>ERP · E-commerce feed · Excel</span><span>4:5 · 1:1 · 9:16 · print</span><span>Brand rules locked by your designers</span>
+        <span>● Live pilot with Fozzy Group</span><span><em class="ph">[X]</em> creatives produced</span><span><em class="ph">[Y%]</em> faster to market</span><span>ERP · E-commerce feed · Excel</span><span>4:5 · 1:1 · 9:16 · print</span><span>Brand rules locked by your designers</span>
+      </div>
+    </div>
+
     <!-- 2. PROBLEM ========================================================= -->
-    <section class="section problem" id="problem">
-      <div class="container">
-        <div class="section-head">
-          <p class="pill">The Problem</p>
-          <h2>Campaign Volume Grows. Your Design Capacity Doesn't.</h2>
-          <p class="sub">Every promotion multiplies across SKUs, formats, stores and channels. Resizing, retyping prices and swapping products by hand takes days per cycle, and every change goes back into the design queue.</p>
+    <section class="section light" id="problem">
+      <div class="wrap problem-grid">
+        <div>
+          <p class="label">The problem</p>
+          <h2>Campaign volume grows. Your design capacity doesn't.</h2>
         </div>
-        <div class="math card" aria-label="Illustrative example: 120 SKUs times 6 formats times 3 channels equals 2,160 creatives">
-          <div><strong>120</strong><span>SKUs</span></div>
-          <i aria-hidden="true">×</i>
-          <div><strong>6</strong><span>formats</span></div>
-          <i aria-hidden="true">×</i>
-          <div><strong>3</strong><span>channels</span></div>
-          <i aria-hidden="true">=</i>
-          <div class="total"><strong>2,160</strong><span>creatives per cycle</span></div>
+        <div class="problem-body">
+          <p class="lede-dark">Every promotion multiplies across SKUs, formats, stores and channels. Resizing, retyping prices and swapping products by hand takes days per cycle, and every change goes back into the design queue.</p>
+          <div class="math" aria-label="Illustrative example: 120 SKUs times 6 formats times 3 channels equals 2,160 creatives">
+            <div><strong>120</strong><span>SKUs</span></div>
+            <i aria-hidden="true">×</i>
+            <div><strong>6</strong><span>formats</span></div>
+            <i aria-hidden="true">×</i>
+            <div><strong>3</strong><span>channels</span></div>
+            <i aria-hidden="true">=</i>
+            <div class="total"><strong>2,160</strong><span>creatives per cycle</span></div>
+          </div>
+          <p class="footnote">Illustrative example.</p>
         </div>
-        <p class="footnote">Illustrative example.</p>
       </div>
     </section>
 
     <!-- 3. HOW IT WORKS ==================================================== -->
-    <section class="section how" id="how">
-      <div class="container">
-        <div class="section-head">
-          <p class="pill">How It Works</p>
-          <h2>Your Brand Rules Become An Automated Production Line</h2>
+    <section class="section dark" id="how">
+      <div class="wrap">
+        <div class="head">
+          <p class="label">How it works</p>
+          <h2>Your brand rules become an automated production line.</h2>
           <p class="sub">We don't replace the creative concept. Your designers define the visual system once. Adminix handles the repetitive production.</p>
         </div>
         <ol class="steps">
-          <li class="card step reveal">
-            <div class="step-head">
-              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5v13c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-13M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5"/></svg></span>
-              <span class="step-num">Step 1</span>
-            </div>
-            <h3>Connect Your Data</h3>
+          <li class="step reveal">
+            <span class="step-num">01</span>
+            <h3>Connect your data</h3>
             <p>Products, prices and promo mechanics from the sources you already use.</p>
-            <div class="mini mini-sources" aria-hidden="true">
-              <div><b>ERP / CRM</b><span class="m-chip m-chip-green">Connected</span></div>
-              <div><b>E-commerce feed</b><span class="m-chip m-chip-green">Connected</span></div>
-              <div><b>Excel / CSV</b><span class="m-chip">Upload</span></div>
+            <div class="mini">
+              <div><b>ERP / CRM</b><span class="chip chip-ok">Connected</span></div>
+              <div><b>E-commerce feed</b><span class="chip chip-ok">Connected</span></div>
+              <div><b>Excel / CSV</b><span class="chip">Upload</span></div>
             </div>
           </li>
-          <li class="card step reveal">
-            <div class="step-head">
-              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
-              <span class="step-num">Step 2</span>
-            </div>
-            <h3>Lock In Your Templates</h3>
+          <li class="step reveal">
+            <span class="step-num">02</span>
+            <h3>Lock in your templates</h3>
             <p>Your design team sets layouts, fonts, colors and legal copy. Adminix works inside them.</p>
-            <div class="mini mini-rules" aria-hidden="true">
-              <div><b>Layouts</b><span class="m-chip m-chip-blue">Approved</span></div>
-              <div><b>Fonts &amp; colors</b><span class="m-chip m-chip-blue">Locked</span></div>
-              <div><b>Logo zone &amp; legal copy</b><span class="m-chip m-chip-blue">Locked</span></div>
+            <div class="mini">
+              <div><b>Layouts</b><span class="chip chip-blue">Approved</span></div>
+              <div><b>Fonts &amp; colors</b><span class="chip chip-blue">Locked</span></div>
+              <div><b>Logo zone &amp; legal</b><span class="chip chip-blue">Locked</span></div>
             </div>
           </li>
-          <li class="card step reveal">
-            <div class="step-head">
-              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M3 9h18M9 9v12"/></svg></span>
-              <span class="step-num">Step 3</span>
-            </div>
-            <h3>Generate Every Variant</h3>
+          <li class="step reveal">
+            <span class="step-num">03</span>
+            <h3>Generate every variant</h3>
             <p>Every SKU, size, store and language in one run.</p>
-            <div class="mini mini-templates" aria-hidden="true">
-              <div class="t t-45"><i></i><b></b><span>4:5</span></div>
-              <div class="t t-11"><i></i><b></b><span>1:1</span></div>
-              <div class="t t-916"><i></i><b></b><span>9:16</span></div>
+            <div class="mini mini-formats" aria-hidden="true">
+              <span class="f f45">4:5</span><span class="f f11">1:1</span><span class="f f916">9:16</span>
             </div>
           </li>
-          <li class="card step reveal">
-            <div class="step-head">
-              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></svg></span>
-              <span class="step-num">Step 4</span>
-            </div>
-            <h3>Review, Approve, Export</h3>
+          <li class="step reveal">
+            <span class="step-num">04</span>
+            <h3>Review, approve, export</h3>
             <p>Tweak an image or layout in a lightweight editor, approve, and ship to every channel.</p>
             <div class="mini mini-editor" aria-hidden="true">
-              <div class="mini-bar"><span>Swap image</span><span>Layout</span><span class="go">Approve</span></div>
-              <div class="mini-canvas"><div class="mini-poster"><i></i><b></b></div><div class="mini-lines"><i></i><i></i><i></i></div></div>
+              <span>Swap image</span><span>Layout</span><span class="go">Approve ✓</span>
             </div>
           </li>
         </ol>
@@ -246,49 +199,49 @@
     </section>
 
     <!-- 3b. USE CASES ====================================================== -->
-    <section class="section uses" id="use-cases">
-      <div class="container">
-        <div class="section-head">
-          <p class="pill">Use Cases</p>
-          <h2>Automate The Repetitive Work Around Every Promo</h2>
+    <section class="section light" id="use-cases">
+      <div class="wrap">
+        <div class="head">
+          <p class="label">Use cases</p>
+          <h2>Automate the repetitive work around every promo.</h2>
         </div>
         <div class="use-grid">
-          <article class="card use reveal">
+          <article class="use reveal">
             <div class="use-art art-posters" aria-hidden="true">
               <div class="ap ap-a"><small>WEEKLY DEAL</small><b>−35%</b></div>
               <div class="ap ap-b"><b>129 ₴</b><small>special price</small></div>
             </div>
             <span class="use-tag">In-store</span>
-            <h3>Promo Posters &amp; Leaflets</h3>
+            <h3>Promo posters &amp; leaflets</h3>
             <p>Build price-led layouts straight from the promo table instead of redoing every SKU by hand.</p>
           </article>
-          <article class="card use reveal">
+          <article class="use reveal">
             <div class="use-art art-formats" aria-hidden="true">
               <div class="af af-1">1080×1080</div>
               <div class="af af-2">1200×628</div>
               <div class="af af-3">1080×1920</div>
             </div>
             <span class="use-tag">Digital</span>
-            <h3>Multi-Format Campaigns</h3>
+            <h3>Multi-format campaigns</h3>
             <p>Every size for social, display, CRM, app and on-site placements from one campaign.</p>
           </article>
-          <article class="card use reveal">
+          <article class="use reveal">
             <div class="use-art art-locales" aria-hidden="true">
               <div><span>UA</span><b>Найкраща ціна</b></div>
               <div><span>EN</span><b>Best price</b></div>
               <div><span>Store 214</span><b>Kyiv, Podil</b></div>
             </div>
             <span class="use-tag">Localization</span>
-            <h3>Store &amp; Language Variants</h3>
+            <h3>Store &amp; language variants</h3>
             <p>Change price, language, assortment and offer per market or store, with the same approved design.</p>
           </article>
-          <article class="card use reveal">
+          <article class="use reveal">
             <div class="use-art art-sku" aria-hidden="true">
               <div class="sku-img"></div>
-              <div><small>Oat granola 500 g</small><b>99 ₴</b><span class="m-chip m-chip-green">−23%</span></div>
+              <div><small>Oat granola 500 g</small><b>99 ₴</b><span class="chip chip-ok">−23%</span></div>
             </div>
             <span class="use-tag">E-commerce</span>
-            <h3>Product Ads &amp; Retail Media</h3>
+            <h3>Product ads &amp; retail media</h3>
             <p>Turn catalog data into consistent product ads and retail-media placements you can sell to suppliers.</p>
           </article>
         </div>
@@ -297,129 +250,120 @@
 
     <!-- 4. PROOF / CASE STUDY ============================================== -->
     <section class="section proof" id="results">
-      <div class="container">
-        <div class="section-head">
-          <p class="pill">Case Study</p>
-          <h2>Running Live With Fozzy Group</h2>
+      <div class="wrap proof-grid">
+        <div class="proof-copy">
+          <p class="label"><span class="live-dot" aria-hidden="true"></span>Live pilot · Case study</p>
+          <!-- PLACEHOLDER(fozzy-approval): confirm Fozzy Group has approved being named publicly.
+               Not approved yet? Use this anonymous wording instead, and also change the ticker under the hero:
+                 <h2>A major Ukrainian retail group runs its promo creatives through Adminix.</h2>
+                 <p>Adminix is deployed on its live promo calendar, from price feed to channel-ready banners.</p> -->
+          <h2>Fozzy Group runs its promo creatives through Adminix.</h2>
+          <p class="lede-dark">One of Ukraine's largest retail groups is piloting Adminix on its live promo calendar, from price feed to channel-ready banners.</p>
         </div>
-        <div class="proof-card reveal">
-          <div class="proof-copy">
-            <p class="live"><span class="live-dot" aria-hidden="true"></span>Live pilot</p>
-            <!-- PLACEHOLDER(fozzy-approval): confirm Fozzy Group has approved being named publicly.
-                 Not approved yet? Use this anonymous wording instead, and also change the section <h2> above
-                 to "Running Live With A Major Ukrainian Retailer" and the "In live pilot with" logo under the hero:
-                   <h3>A major Ukrainian retail group runs its promo creatives through Adminix.</h3>
-                   <p>Adminix is deployed on its live promo calendar, from price feed to channel-ready banners.</p> -->
-            <h3>Fozzy Group runs its promo creatives through Adminix.</h3>
-            <p>One of Ukraine's largest retail groups is piloting Adminix on its live promo calendar — from price feed to channel-ready banners.</p>
+        <div class="proof-stats">
+          <div class="stat">
+            <!-- PLACEHOLDER(metric-1) -->
+            <strong class="ph" data-placeholder="Metric 1">[X]</strong>
+            <span>creatives produced in the pilot</span>
           </div>
-          <div class="proof-stats">
-            <div class="stat">
-              <!-- PLACEHOLDER(metric-1) -->
-              <strong class="ph" data-placeholder="Metric 1">[X]</strong>
-              <span>creatives produced in the pilot</span>
-            </div>
-            <div class="stat">
-              <!-- PLACEHOLDER(metric-2) -->
-              <strong class="ph" data-placeholder="Metric 2">[Y%]</strong>
-              <span>faster from promo brief to live banners</span>
-            </div>
-            <!-- PLACEHOLDER(quote): optional stakeholder quote. Delete this <figure> if you don't have one yet. -->
-            <figure class="quote" data-placeholder="Quote">
-              <blockquote><p>“[Short quote from a Fozzy Group stakeholder about speed or consistency.]”</p></blockquote>
-              <figcaption>[Name], [Title], Fozzy Group</figcaption>
-            </figure>
+          <div class="stat">
+            <!-- PLACEHOLDER(metric-2) -->
+            <strong class="ph" data-placeholder="Metric 2">[Y%]</strong>
+            <span>faster from promo brief to live banners</span>
           </div>
+          <!-- PLACEHOLDER(quote): optional stakeholder quote. Delete this <figure> if you don't have one yet. -->
+          <figure class="quote" data-placeholder="Quote">
+            <blockquote><p>“[Short quote from a Fozzy Group stakeholder about speed or consistency.]”</p></blockquote>
+            <figcaption>[Name], [Title], Fozzy Group</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <!-- 5. WHO IT'S FOR ==================================================== -->
-    <section class="section who" id="who">
-      <div class="container">
-        <div class="section-head">
-          <p class="pill">Who It's For</p>
-          <h2>Built For The People Who Own The Promo Calendar</h2>
-          <p class="sub">Retail chains with marketing teams of 15–200+. Also running in pharmacy, fashion and QSR.</p>
+    <section class="section light" id="who">
+      <div class="wrap">
+        <div class="head">
+          <p class="label">Who it's for</p>
+          <h2>Built for the people who own the promo calendar.</h2>
         </div>
         <div class="personas">
-          <article class="card persona reveal">
-            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5" class="fill"/></svg></span>
+          <article class="persona reveal">
+            <span class="persona-for">For</span>
             <h3>Trade Marketing Directors</h3>
-            <p>Launch every promo across every SKU on time — without growing the design team.</p>
+            <p>Launch every promo across every SKU on time, without growing the design team.</p>
           </article>
-          <article class="card persona reveal">
-            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 12l3-3 2 2 4-4"/></svg></span>
+          <article class="persona reveal">
+            <span class="persona-for">For</span>
             <h3>Retail Media Heads</h3>
             <p>Fill more placements with on-brand creatives, fast enough to sell inventory to suppliers.</p>
           </article>
-          <article class="card persona reveal">
-            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span>
+          <article class="persona reveal">
+            <span class="persona-for">For</span>
             <h3>Operations Leads</h3>
-            <p>Cut the manual handoff between price data and creatives — fewer errors on shelf and online.</p>
+            <p>Cut the manual handoff between price data and creatives, with fewer errors on shelf and online.</p>
           </article>
         </div>
+        <p class="fit"><b>Best fit</b> Retail chains with marketing teams of 15–200+ · also pharmacy, fashion and QSR</p>
       </div>
     </section>
 
     <!-- 6. CLOSING CTA ===================================================== -->
     <section class="section cta" id="start">
-      <div class="container">
-        <div class="cta-card">
-          <div class="cta-copy">
-            <p class="pill pill-light">Try It On Your Data</p>
-            <h2>Send Us One Template And A Product Feed.</h2>
-            <p class="lede">An Excel export, CSV or feed link is enough. We'll send back promo creatives built from your actual SKUs, in your brand, <span class="ph" data-placeholder="Turnaround">[within 48 hours]</span>, and show you what else can be automated.</p>
-            <ul class="ticks">
-              <li>Low-risk pilot: start with one use case, measure time saved, then expand</li>
-              <li>No integration needed to try it</li>
-              <li>Your data is used only for your sample</li>
-            </ul>
-          </div>
-
-          <!--
-            PLACEHOLDER(form-endpoint): set action="" to your form backend.
-            - Netlify: leave action="/" — data-netlify="true" makes it work with zero config.
-            - Vercel/other: use a Formspree / Basin / Tally endpoint URL, e.g. action="https://formspree.io/f/xxxx".
-            main.js submits via fetch and shows success/error inline.
-          -->
-          <form class="lead-form" name="catalog-request" method="POST" action="/" data-netlify="true" netlify-honeypot="company_url" data-placeholder="Form endpoint">
-            <input type="hidden" name="form-name" value="catalog-request">
-            <p class="hp" aria-hidden="true"><label>Leave empty <input name="company_url" tabindex="-1" autocomplete="off"></label></p>
-
-            <label class="field">
-              <span>Work email</span>
-              <input type="email" name="email" required autocomplete="email" placeholder="you@retailer.com">
-            </label>
-            <label class="field">
-              <span>Company</span>
-              <input type="text" name="company" required autocomplete="organization" placeholder="Retail chain name">
-            </label>
-            <label class="field">
-              <span>Where's your product data today?</span>
-              <select name="data_source">
-                <option>Excel / CSV export</option>
-                <option>E-commerce product feed</option>
-                <option>ERP / CRM</option>
-                <option>Not sure</option>
-              </select>
-            </label>
-            <label class="field">
-              <span>Link to a sample feed or template <em>(optional)</em></span>
-              <input type="url" name="feed_url" inputmode="url" placeholder="https://…">
-            </label>
-            <!-- PLACEHOLDER(cta-copy): button text not final. -->
-            <button class="btn btn-lg btn-block" type="submit">See It With Your Own Catalog</button>
-            <p class="form-note">No link handy? Submit anyway and we'll reply with a secure upload link.</p>
-            <p class="form-status" role="status" aria-live="polite"></p>
-          </form>
+      <div class="wrap cta-grid">
+        <div class="cta-copy">
+          <p class="label">Try it on your data</p>
+          <h2>Send us one template and a product feed.</h2>
+          <p class="lede">An Excel export, CSV or feed link is enough. We'll send back promo creatives built from your actual SKUs, in your brand, <span class="ph" data-placeholder="Turnaround">[within 48 hours]</span>, and show you what else can be automated.</p>
+          <ul class="ticks">
+            <li>Low-risk pilot: start with one use case, measure time saved, then expand</li>
+            <li>No integration needed to try it</li>
+            <li>Your data is used only for your sample</li>
+          </ul>
         </div>
+
+        <!--
+          PLACEHOLDER(form-endpoint): set action="" to your form backend.
+          - Netlify: leave action="/" — data-netlify="true" makes it work with zero config.
+          - Vercel/other: use a Formspree / Basin / Tally endpoint URL, e.g. action="https://formspree.io/f/xxxx".
+          main.js submits via fetch and shows success/error inline.
+        -->
+        <form class="lead-form" name="catalog-request" method="POST" action="/" data-netlify="true" netlify-honeypot="company_url" data-placeholder="Form endpoint">
+          <input type="hidden" name="form-name" value="catalog-request">
+          <p class="hp" aria-hidden="true"><label>Leave empty <input name="company_url" tabindex="-1" autocomplete="off"></label></p>
+
+          <label class="field">
+            <span>Work email</span>
+            <input id="f-email" type="email" name="email" required autocomplete="email" placeholder="you@retailer.com">
+          </label>
+          <label class="field">
+            <span>Company</span>
+            <input id="f-company" type="text" name="company" required autocomplete="organization" placeholder="Retail chain name">
+          </label>
+          <label class="field">
+            <span>Where's your product data today?</span>
+            <select id="f-source" name="data_source">
+              <option>Excel / CSV export</option>
+              <option>E-commerce product feed</option>
+              <option>ERP / CRM</option>
+              <option>Not sure</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Link to a sample feed or template <em>(optional)</em></span>
+            <input id="f-feed" type="url" name="feed_url" inputmode="url" placeholder="https://…">
+          </label>
+          <!-- PLACEHOLDER(cta-copy): button text not final. -->
+          <button class="btn btn-block" type="submit">See it with your own catalog →</button>
+          <p class="form-note">No link handy? Submit anyway and we'll reply with a secure upload link.</p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
+    <div class="wrap footer-inner">
       <a class="logo logo-small" href="#top" aria-label="Back to top">
         <svg class="logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
         <span>Adminix</span>
@@ -435,7 +379,7 @@
 
   <!-- Mobile sticky CTA: shows after the hero, hides near the form -->
   <div class="sticky-cta" aria-hidden="true">
-    <a class="btn btn-block" href="#start" tabindex="-1">See It With Your Own Catalog</a>
+    <a class="btn btn-block" href="#start" tabindex="-1">See it with your own catalog →</a>
   </div>
 
   <script src="main.js" defer></script>

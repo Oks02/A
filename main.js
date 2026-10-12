@@ -19,58 +19,58 @@
   onScroll();
 
   // ---------- Scroll reveal ----------
-  var reveals = document.querySelectorAll('.reveal');
-  if (!hasIO || reduceMotion) {
-    reveals.forEach(function (el) { el.classList.add('is-in'); });
-  } else {
+  // Content is visible by default; only cards still below the fold get hidden
+  // and then animate in, so nothing stays invisible if JS or observers fail.
+  if (hasIO && !reduceMotion) {
     var revealIO = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('is-in'); revealIO.unobserve(e.target); }
+        if (e.isIntersecting) { e.target.classList.remove('is-pending'); revealIO.unobserve(e.target); }
       });
-    }, { rootMargin: '0px 0px -10% 0px' });
-    reveals.forEach(function (el) { revealIO.observe(el); });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      if (el.getBoundingClientRect().top > window.innerHeight) {
+        el.classList.add('is-pending');
+        revealIO.observe(el);
+      }
+    });
   }
 
   // ---------- Hero mock: cycle through feed rows ----------
   var skus = [
-    { name: 'Olive oil 1 L', old: '289', price: '219', off: '−24%' },
-    { name: 'Ground coffee 250 g', old: '189', price: '149', off: '−21%' },
-    { name: 'Oat granola 500 g', old: '129', price: '99', off: '−23%' }
+    { name: 'Olive oil 1 L', was: '289', now: '219 ₴', off: '−24%' },
+    { name: 'Ground coffee 250 g', was: '189', now: '149 ₴', off: '−21%' },
+    { name: 'Oat granola 500 g', was: '129', now: '99 ₴', off: '−23%' }
   ];
-  var poster = document.querySelector('.poster-main');
-  var rows = document.querySelectorAll('.feed-rows li');
+  var box = document.querySelector('.posters');
+  var main = box && box.querySelector('.p45');
+  var rows = document.querySelectorAll('.feed .row:not(.head)');
   var count = document.querySelector('.mock-count');
-  var tags = document.querySelectorAll('.poster-story .p-tag, .poster-square .p-tag');
 
-  if (poster && !reduceMotion) {
+  if (main && !reduceMotion) {
     var i = 0, made = 37, timer = null;
+    var set = function (sel, v) { box.querySelectorAll(sel).forEach(function (el) { el.textContent = v; }); };
 
-    function step() {
+    var step = function () {
       i = (i + 1) % skus.length;
       var s = skus[i];
-      poster.classList.add('is-swapping');
+      box.classList.add('swap');
       setTimeout(function () {
-        poster.dataset.sku = i;
-        poster.querySelector('.p-name').textContent = s.name;
-        poster.querySelector('.p-old').textContent = s.old;
-        poster.querySelector('.p-new').textContent = s.price;
-        poster.querySelector('.p-badge').textContent = s.off;
-        tags.forEach(function (t) { t.textContent = s.off; });
-        rows.forEach(function (r, n) { r.classList.toggle('is-active', n === i); });
+        main.dataset.sku = i;
+        set('[data-name]', s.name); set('[data-was]', s.was); set('[data-now]', s.now); set('[data-off]', s.off);
+        rows.forEach(function (r, n) { r.classList.toggle('on', n === i); });
         made = made >= 128 ? 12 : made + 3;
         count.textContent = made;
-        poster.classList.remove('is-swapping');
+        box.classList.remove('swap');
       }, 350);
-    }
-
-    function start() { if (!timer) timer = setInterval(step, 2600); }
-    function stop() { clearInterval(timer); timer = null; }
+    };
+    var start = function () { if (!timer) timer = setInterval(step, 2600); };
+    var stop = function () { clearInterval(timer); timer = null; };
 
     // Only animate while the mock is on screen.
     if (hasIO) {
       new IntersectionObserver(function (entries) {
         entries[0].isIntersecting ? start() : stop();
-      }).observe(poster);
+      }).observe(box);
     } else {
       start();
     }
