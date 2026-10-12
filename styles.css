@@ -232,6 +232,7 @@ p { margin: 0; text-wrap: pretty; }
   background: #F3F4F6; color: var(--muted);
 }
 .m-chip-green { background: var(--green-soft); color: var(--green); }
+.m-chip-blue { background: var(--blue-soft); color: var(--blue); }
 .m-btn { background: var(--blue); color: #fff; font-weight: 600; font-size: 12px; padding: 6px 10px; border-radius: 6px; white-space: nowrap; }
 @media (max-width: 480px) { .m-btn { display: none; } }
 
@@ -357,7 +358,8 @@ p { margin: 0; text-wrap: pretty; }
 
 /* ---------- How it works ---------- */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
-@media (min-width: 900px) { .steps { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+@media (min-width: 700px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
+@media (min-width: 1140px) { .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; } .step { padding: 24px; } .mini { font-size: 12px; } }
 .step { padding: 28px; display: flex; flex-direction: column; }
 .step-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
 .step-num { font: 600 14px/1 var(--font-body); color: var(--blue); background: var(--blue-soft); padding: 6px 12px; border-radius: 999px; }
@@ -371,13 +373,13 @@ p { margin: 0; text-wrap: pretty; }
   font-size: 13px;
   flex: 1; min-height: 150px;
 }
-.mini-sources { display: grid; gap: 8px; align-content: center; }
-.mini-sources div {
-  display: flex; justify-content: space-between; align-items: center;
+.mini-sources, .mini-rules { display: grid; gap: 8px; align-content: center; }
+.mini-sources div, .mini-rules div {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 8px;
   background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px;
 }
-.mini-sources b { font-weight: 500; color: var(--ink); }
-.mini-templates { display: flex; justify-content: center; align-items: flex-end; gap: 12px; }
+.mini-sources b, .mini-rules b { font-weight: 500; color: var(--ink); }
+.mini-templates { display: flex; justify-content: center; align-items: flex-end; gap: 10px; }
 .mini-templates .t {
   position: relative; border-radius: 8px; background: var(--blue); padding: 8px;
   display: flex; flex-direction: column; gap: 6px;
@@ -386,9 +388,9 @@ p { margin: 0; text-wrap: pretty; }
 .mini-templates .t i { flex: 1; border-radius: 5px; background: rgba(255,255,255,.3); }
 .mini-templates .t b { height: 6px; width: 70%; border-radius: 3px; background: #fff; }
 .mini-templates .t span { position: absolute; top: 6px; right: 6px; font: 600 9px/1 var(--font-body); color: #fff; opacity: .9; }
-.t-45 { width: 80px; height: 100px; }
-.t-11 { width: 84px; height: 84px; background: var(--navy) !important; box-shadow: none !important; }
-.t-916 { width: 62px; height: 110px; background: #60A5FA !important; }
+.t-45 { width: 64px; height: 80px; }
+.t-11 { width: 68px; height: 68px; background: var(--navy) !important; box-shadow: none !important; }
+.t-916 { width: 50px; height: 89px; background: #60A5FA !important; }
 .mini-editor { display: flex; flex-direction: column; gap: 12px; }
 .mini-bar { display: flex; gap: 6px; flex-wrap: wrap; }
 .mini-bar span { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; font-size: 12px; font-weight: 500; }
@@ -404,6 +406,38 @@ p { margin: 0; text-wrap: pretty; }
 .mini-lines i { height: 8px; border-radius: 4px; background: var(--line); }
 .mini-lines i:nth-child(2) { width: 75%; }
 .mini-lines i:nth-child(3) { width: 50%; }
+
+/* ---------- Use cases ---------- */
+.use-grid { display: grid; gap: 20px; }
+@media (min-width: 700px) { .use-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
+.use { padding: 20px 20px 28px; display: flex; flex-direction: column; }
+.use h3 { margin: 6px 0 8px; }
+.use p { color: var(--muted); font-weight: 500; font-size: 17px; }
+.use-tag { font: 600 13px/1 var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--blue); margin: 22px 0 6px; padding: 0 8px; }
+.use h3, .use p { padding: 0 8px; }
+.use-art {
+  position: relative; height: 200px; border-radius: 16px; overflow: hidden;
+  background: #F8FAFF; border: 1px solid var(--line);
+}
+.art-posters .ap { position: absolute; border-radius: 10px; color: #fff; padding: 12px; box-shadow: 0 14px 24px -12px rgba(15,23,42,.45); display: flex; flex-direction: column; }
+.ap small { font: 600 9px/1.2 var(--font-body); letter-spacing: .04em; }
+.ap b { font: 800 28px/1 var(--font-display); letter-spacing: -0.03em; }
+.ap-a { width: 120px; height: 150px; left: calc(50% - 130px); top: 24px; background: var(--promo-red); transform: rotate(-6deg); justify-content: space-between; }
+.ap-b { width: 112px; height: 136px; left: calc(50% + 6px); top: 34px; background: var(--promo-yellow); color: var(--ink); transform: rotate(5deg); justify-content: flex-end; }
+.ap-b b { font-size: 24px; }
+.art-formats .af { position: absolute; display: grid; place-items: center; border-radius: 8px; font: 600 11px/1 var(--font-body); box-shadow: 0 10px 20px -10px rgba(15,23,42,.35); }
+.af-1 { width: 96px; height: 96px; left: calc(50% - 160px); top: 52px; background: var(--blue); color: #fff; }
+.af-2 { width: 120px; height: 64px; left: calc(50% - 52px); top: 36px; background: #fff; color: var(--ink-2); border: 1px solid var(--line); }
+.af-3 { width: 60px; height: 106px; left: calc(50% + 80px); top: 46px; font-size: 9px; background: var(--navy); color: #fff; }
+.art-locales { display: grid; align-content: center; gap: 8px; padding: 16px 20px; }
+.art-locales div { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+.art-locales span { flex: none; min-width: 64px; font: 600 11px/1 var(--font-body); color: var(--blue); }
+.art-locales b { font-weight: 600; font-size: 14px; color: var(--ink); }
+.art-sku { display: flex; align-items: center; justify-content: center; gap: 18px; }
+.sku-img { width: 92px; height: 120px; border-radius: 10px; background: linear-gradient(150deg, #E9A92C, #C98C18); box-shadow: 0 14px 24px -12px rgba(15,23,42,.45); position: relative; }
+.sku-img::after { content: ""; position: absolute; left: 20px; right: 20px; top: 46px; height: 40px; border-radius: 50%; background: #F4ECD8; }
+.art-sku small { display: block; font-size: 12px; color: var(--muted); }
+.art-sku b { display: block; font: 800 28px/1.1 var(--font-display); letter-spacing: -0.03em; margin: 4px 0 6px; color: var(--ink); }
 
 /* ---------- Proof ---------- */
 .proof-card {
