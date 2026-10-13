@@ -93,7 +93,7 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 .nav-links a { text-decoration: none; color: var(--mist); }
 .nav-links a:hover { color: var(--paper); }
 .nav .btn { margin-left: auto; }
-@media (min-width: 960px) { .nav-links { display: flex; } .nav .btn { margin-left: 8px; } }
+@media (min-width: 1100px) { .nav-links { display: flex; } .nav .btn { margin-left: 8px; } }
 
 /* ---------- Hero ---------- */
 .hero { background: var(--signal); color: var(--paper); padding-block: clamp(40px, 6vw, 80px) clamp(48px, 6vw, 88px); }
@@ -195,18 +195,14 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 /* Problem */
 .problem-grid { display: grid; gap: 36px 64px; }
 @media (min-width: 960px) { .problem-grid { grid-template-columns: 1.15fr 1fr; align-items: end; } }
-.math {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px;
-  margin-top: 28px; padding: 22px 24px;
-  background: var(--paper); border: 2px solid var(--ink); border-radius: 4px; box-shadow: var(--shadow);
-}
-.math div { display: flex; flex-direction: column; }
-.math strong { font: 900 clamp(38px, 4.4vw, 56px)/.9 var(--display); font-stretch: 70%; }
-.math span { font: 600 11px/1.3 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-top: 6px; }
-.math i { font: 400 28px/1 var(--mono); font-style: normal; color: var(--muted); }
-.math .total { background: var(--tag); padding: 8px 12px; margin: -4px 0; }
-.math .total span { color: var(--ink); }
-.footnote { font: 400 12px/1.4 var(--mono); color: var(--muted); margin-top: 14px; }
+
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+.fact { display: flex; flex-direction: column; gap: 10px; background: var(--paper); border: 2px solid var(--ink); border-radius: 4px; padding: 20px; box-shadow: var(--shadow); }
+.fact strong { font: 900 clamp(40px, 4.2vw, 60px)/.85 var(--display); font-stretch: 66%; white-space: nowrap; }
+.fact span { font: 600 12px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.fact-hot { background: var(--tag); }
+.fact-hot span { color: var(--ink); }
+@media (max-width: 420px) { .facts { grid-template-columns: 1fr; } }
 
 /* How it works */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
@@ -225,6 +221,7 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 .chip { display: inline-block; padding: 4px 6px; font: 700 10px/1 var(--mono); text-transform: uppercase; letter-spacing: .04em; background: var(--light); color: var(--muted); border-radius: 2px; white-space: nowrap; }
 .chip-ok { background: #DDF6E7; color: var(--ok); }
 .chip-blue { background: #E2E7FF; color: var(--signal); }
+.chip-hot { background: #FFE3DC; color: #C0261B; }
 .mini-formats { display: flex; align-items: flex-end; justify-content: center; gap: 10px; min-height: 120px; padding: 12px; border: 1px solid var(--line); border-radius: 4px; }
 .mini-formats .f { display: grid; place-items: end start; padding: 6px; font: 700 10px/1 var(--mono); color: var(--paper); border-radius: 3px; box-shadow: 3px 3px 0 var(--ink); }
 .f45 { width: 64px; height: 80px; background: var(--signal); }
@@ -261,6 +258,15 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 .sku-img::after { content: ""; position: absolute; left: 20px; right: 20px; top: 46px; height: 40px; border-radius: 50%; background: #F4ECD8; }
 .art-sku small { display: block; font: 400 12px/1.2 var(--mono); color: var(--muted); }
 .art-sku b { display: block; font: 900 40px/1 var(--display); font-stretch: 70%; margin: 4px 0 6px; }
+
+/* Why Adminix */
+.why-grid { display: grid; gap: 20px; }
+@media (min-width: 900px) { .why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.why-card { display: flex; flex-direction: column; gap: 12px; padding: 26px 24px 28px; border: 2px solid rgba(255,255,255,.22); border-radius: 4px; }
+.why-card:first-child { background: var(--signal); border-color: var(--signal); box-shadow: 6px 6px 0 var(--tag); }
+.why-mark { align-self: flex-start; min-width: 48px; height: 48px; padding: 0 8px; display: grid; place-items: center; background: var(--tag); color: var(--ink); font: 900 22px/1 var(--display); font-stretch: 75%; margin-bottom: 8px; }
+.why-card p { color: var(--mist); font-size: 16px; }
+.why-card:first-child p { color: #E4E8FF; }
 
 /* Proof */
 .proof { background: var(--tag); color: var(--ink); border-block: 3px solid var(--ink); }

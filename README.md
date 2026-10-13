@@ -31,18 +31,18 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 |---|------|-------|
 | 1 | **Fozzy Group metrics**: `[X]` creatives produced and `[Y%]` faster. They appear in the Results section and in the yellow ticker under the hero | Results (`metric-1`, `metric-2`) and ticker |
 | 2 | **Fozzy Group quote**: quote, name, title. You can also delete the `<figure>` | Results section (`quote`) |
-| 3 | **Fozzy Group sign-off**: written OK to name them publicly. If they allow it, consider adding their logo to the Results section. If not yet, the `fozzy-approval` comment has ready-made anonymous wording ("a major Ukrainian retail group") | Results section (`fozzy-approval`) |
+| 3 | **Fozzy Group sign-off**: written OK to name them publicly. If they allow it, consider adding their logo to the Results section. The page says Fozzy Group is *piloting* Adminix; update it once the contract is signed. If they haven't approved being named, the `fozzy-approval` comment has ready-made anonymous wording ("a major Ukrainian retail chain") | Results section (`fozzy-approval`) |
 | 4 | **Turnaround promise**: `[within 48 hours]` | Closing CTA copy |
 | 5 | **Form endpoint**: Netlify needs nothing. On Vercel, set `action` to a Formspree, Basin or Tally URL | `<form class="lead-form">` (`form-endpoint`) |
 | 6 | **Final CTA copy**: "See it with your own catalog" appears 3×, plus "Try your catalog" in the nav | Hero, form button, sticky mobile bar |
 | 7 | **Hero visual**: currently an animated CSS mock. To swap in a real video, GIF or screenshot, use the snippet in the comment | Hero (`hero-visual`) |
 | 8 | **Domain**: replace `https://adminix.example` in the canonical, `og:url` and `og:image` tags. `og:image` **must** be an absolute URL for LinkedIn | `<head>` (`domain`) |
 | 9 | **Contact**: confirm `hello@adminix.io`, and add the real LinkedIn URL | Footer (`contact`) |
-| 10 | **Logo**: the "A" mark (recolored white for the blue header) is an approximation of the Adminix logo. Paste the real SVG into the `<symbol id="logo-mark">` at the top of `index.html` (the nav and footer both use it), and update `assets/favicon.svg` and the OG image | `logo` |
+| 10 | **Logo**: the "A" mark (recolored white for the blue header) is an approximation of the Adminix logo. The deck's slides are flattened images, so the real logo couldn't be extracted from them. Paste the real SVG into the `<symbol id="logo-mark">` at the top of `index.html` (the nav and footer both use it), and update `assets/favicon.svg` and the OG image | `logo` |
 
 Also check:
 - The success message ("we'll be in touch within one business day") is a commitment. Edit it in `main.js` if you can't keep it.
-- The "120 SKUs × 6 formats × 3 channels = 2,160" figure in the Problem section is labeled *illustrative*. Swap in real numbers if you have them.
+- The Problem figures (100–200 posters a week, 3–5 days per campaign) and the Why Adminix claims (AI validation agent, subscription plus pay per poster, "no $30–50K annual contract", built for CEE retail) come from the Adminix investor deck. Re-check them if anything has changed.
 - The mock prices use ₴. Change them in `index.html` and `main.js` (`skus` array) if you're targeting a non-UA audience.
 - No analytics are included. Add your snippet before `</head>`. A successful form submit already fires `gtag('event', 'generate_lead')` if gtag is present.
 - After deploying, re-scrape the page in the [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) so the share preview picks up the image.
