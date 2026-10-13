@@ -35,48 +35,6 @@
     });
   }
 
-  // ---------- Hero mock: cycle through feed rows ----------
-  var skus = [
-    { name: 'Olive oil 1 L', was: '289', now: '219 ₴', off: '−24%' },
-    { name: 'Ground coffee 250 g', was: '189', now: '149 ₴', off: '−21%' },
-    { name: 'Oat granola 500 g', was: '129', now: '99 ₴', off: '−23%' }
-  ];
-  var box = document.querySelector('.posters');
-  var main = box && box.querySelector('.p45');
-  var rows = document.querySelectorAll('.feed .row:not(.head)');
-  var count = document.querySelector('.mock-count');
-
-  if (main && !reduceMotion) {
-    var i = 0, made = 37, timer = null;
-    var set = function (sel, v) { box.querySelectorAll(sel).forEach(function (el) { el.textContent = v; }); };
-
-    var step = function () {
-      i = (i + 1) % skus.length;
-      var s = skus[i];
-      box.classList.add('swap');
-      setTimeout(function () {
-        main.dataset.sku = i;
-        set('[data-name]', s.name); set('[data-was]', s.was); set('[data-now]', s.now); set('[data-off]', s.off);
-        rows.forEach(function (r, n) { r.classList.toggle('on', n === i); });
-        made = made >= 128 ? 12 : made + 3;
-        count.textContent = made;
-        box.classList.remove('swap');
-      }, 350);
-    };
-    var start = function () { if (!timer) timer = setInterval(step, 2600); };
-    var stop = function () { clearInterval(timer); timer = null; };
-
-    // Only animate while the mock is on screen.
-    if (hasIO) {
-      new IntersectionObserver(function (entries) {
-        entries[0].isIntersecting ? start() : stop();
-      }).observe(box);
-    } else {
-      start();
-    }
-    document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
-  }
-
   // ---------- Mobile sticky CTA: visible after hero, hidden at the form ----------
   var sticky = document.querySelector('.sticky-cta');
   var hero = document.querySelector('.hero');

@@ -64,45 +64,61 @@
         </div>
 
         <!--
-          PLACEHOLDER(hero-visual): animated HTML/CSS mock of a feed turning into posters.
-          To use a real asset instead, replace the whole <div class="machine"> with e.g.:
+          PLACEHOLDER(hero-visual): CSS block diagram of the Adminix pipeline.
+          To use a real asset instead, replace the whole <div class="flowchart"> with e.g.:
             <video class="hero-video" src="assets/hero.mp4" poster="assets/hero-poster.jpg"
                    autoplay muted loop playsinline aria-label="Adminix generating promo banners"></video>
           (.hero-video is already styled in styles.css)
         -->
-        <div class="machine" data-placeholder="Hero visual (CSS mock)" role="img" aria-label="Illustration: rows from a product spreadsheet become promo posters in three formats">
-          <div class="file"><span>promo_w14.xlsx</span><span><span class="mock-count">37</span>/128 done</span></div>
-          <div class="feed">
-            <div class="row head"><span>SKU</span><span>Item</span><span>Was</span><span>Now</span></div>
-            <div class="row on"><span>48213</span><span>Olive oil 1 L</span><span class="was">289</span><span class="now">219</span></div>
-            <div class="row"><span>51027</span><span>Ground coffee 250 g</span><span class="was">189</span><span class="now">149</span></div>
-            <div class="row"><span>39954</span><span>Oat granola 500 g</span><span class="was">129</span><span class="now">99</span></div>
-            <div class="row extra"><span>40118</span><span>Sparkling water 6×</span><span class="was">99</span><span class="now">84</span></div>
+        <div class="flowchart" data-placeholder="Hero visual (flow diagram)" role="img" aria-label="Diagram of the Adminix process: 1, receive data from ERP or CRM, an e-commerce feed and Excel; 2, compose posters on your brand templates; 3, ready posters in print, social and story formats; 4, an AI validation agent checks every poster against your data and flags only what needs review">
+          <p class="stage"><span>1</span>Receive your data</p>
+          <div class="fc-row fc-inputs">
+            <div class="blk blk-in s1"><small>Prices</small><b>ERP / CRM</b></div>
+            <div class="blk blk-in s1"><small>Products</small><b>E-com feed</b></div>
+            <div class="blk blk-in s1"><small>Promos</small><b>Excel / CSV</b></div>
           </div>
-          <div class="flow"><b>Auto-compose</b><i>✓ AI-checked</i></div>
-          <div class="posters">
-            <div class="poster p45" data-sku="0">
-              <span class="brand">YOUR BRAND</span>
-              <span class="stamp" data-off>−24%</span>
-              <div class="art">
-                <svg class="prod prod-0" viewBox="0 0 80 120" aria-hidden="true"><rect x="32" y="4" width="16" height="14" rx="3" fill="#2E3B1F"/><path d="M30 18h20v14c8 6 12 14 12 24v54a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6V56c0-10 4-18 12-24z" fill="#7A8B3A"/><rect x="22" y="62" width="36" height="32" rx="3" fill="#F4ECD8"/><circle cx="40" cy="78" r="8" fill="#7A8B3A"/></svg>
-                <svg class="prod prod-1" viewBox="0 0 80 120" aria-hidden="true"><path d="M16 22 24 8h32l8 14v86a6 6 0 0 1-6 6H22a6 6 0 0 1-6-6z" fill="#5B3A29"/><path d="M16 22h48" stroke="#3E271B" stroke-width="3"/><rect x="24" y="50" width="32" height="38" rx="3" fill="#F4ECD8"/><ellipse cx="40" cy="69" rx="7" ry="10" fill="#5B3A29"/></svg>
-                <svg class="prod prod-2" viewBox="0 0 80 120" aria-hidden="true"><path d="M14 16h44l8 6v92H14z" fill="#E9A92C"/><path d="M58 16l8 6v92l-8-4z" fill="#C98C18"/><rect x="20" y="30" width="32" height="10" rx="2" fill="#7A3B12"/><circle cx="36" cy="76" r="16" fill="#F4ECD8"/><circle cx="31" cy="73" r="3" fill="#C98C18"/><circle cx="39" cy="80" r="3" fill="#C98C18"/></svg>
+          <svg class="wire" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M50 0 V14 H150 M150 0 V40 M250 0 V14 H150"/>
+          </svg>
+          <p class="stage"><span>2</span>Compose on your brand templates</p>
+          <div class="blk blk-engine s2">
+            <div class="engine-head"><img src="assets/logo-mark.png" alt="" width="28" height="28"><b>Adminix composes</b></div>
+            <div class="engine-chips"><span>Your templates</span><span>Product images</span><span>Prices &amp; promos</span></div>
+          </div>
+          <svg class="wire" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M150 0 V26 M150 26 H64 V40 M150 26 H197 V40 M197 26 H270 V40"/>
+          </svg>
+          <p class="stage"><span>3</span>Ready posters, every format</p>
+          <div class="fc-row fc-outputs">
+            <div class="out s4">
+              <div class="poster p45" data-sku="0">
+                <span class="brand">YOUR BRAND</span>
+                <span class="stamp">−24%</span>
+                <div class="art">
+                  <svg class="prod prod-0" viewBox="0 0 80 120" aria-hidden="true"><rect x="32" y="4" width="16" height="14" rx="3" fill="#2E3B1F"/><path d="M30 18h20v14c8 6 12 14 12 24v54a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6V56c0-10 4-18 12-24z" fill="#7A8B3A"/><rect x="22" y="62" width="36" height="32" rx="3" fill="#F4ECD8"/><circle cx="40" cy="78" r="8" fill="#7A8B3A"/></svg>
+                </div>
+                <span class="name">Olive oil 1 L</span>
+                <span class="price"><s>289</s><b>219 ₴</b></span>
               </div>
-              <span class="name" data-name>Olive oil 1 L</span>
-              <span class="price"><s data-was>289</s><b data-now>219 ₴</b></span>
-              <span class="fmt">4:5</span>
+              <small>Print 4:5</small>
             </div>
-            <div class="poster p11">
-              <span class="off" data-off>−24%</span>
-              <span class="name" data-name>Olive oil 1 L</span>
-              <span class="fmt">1:1</span>
+            <div class="out s4">
+              <div class="poster p11"><span class="off">−24%</span><span class="name">Olive oil 1 L</span></div>
+              <small>Social 1:1</small>
             </div>
-            <div class="poster p916">
-              <span class="off" data-off>−24%</span>
-              <span class="price" data-now>219 ₴</span>
-              <span class="fmt">9:16</span>
+            <div class="out s4">
+              <div class="poster p916"><span class="off">−24%</span><span class="price">219 ₴</span></div>
+              <small>Story 9:16</small>
             </div>
+          </div>
+          <svg class="wire" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M64 0 V14 H270 M197 0 V14 M270 0 V14 M150 14 V40"/>
+          </svg>
+          <p class="stage"><span>4</span>AI validation of every poster</p>
+          <div class="blk blk-check s4b">
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <div><b>Checked against your data</b><small>Price · product name · promo dates</small></div>
+            <span class="check-count"><b>127</b> ready<br><em>1 flagged</em></span>
           </div>
         </div>
       </div>

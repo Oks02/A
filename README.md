@@ -5,7 +5,7 @@ A single-page marketing site. It's plain HTML, CSS and JS: no framework, no buil
 ```
 index.html          page markup (all 6 sections)
 styles.css          all styles (design tokens at the top under :root)
-main.js             hero animation, scroll reveals, sticky mobile CTA, form submit
+main.js             scroll reveals, sticky mobile CTA, form submit
 assets/favicon.png   browser tab icon (logo mark only)
 assets/logo.png      full logo, transparent
 assets/logo-mark.png 256px mark for home-screen icons
@@ -37,7 +37,7 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 | 4 | **Turnaround promise**: `[within 48 hours]` | Closing CTA copy |
 | 5 | **Form endpoint**: Netlify needs nothing. On Vercel, set `action` to a Formspree, Basin or Tally URL | `<form class="lead-form">` (`form-endpoint`) |
 | 6 | **Final CTA copy**: "See it with your own catalog" appears 3×, plus "Try your catalog" in the nav | Hero, form button, sticky mobile bar |
-| 7 | **Hero visual**: currently an animated CSS mock. To swap in a real video, GIF or screenshot, use the snippet in the comment | Hero (`hero-visual`) |
+| 7 | **Hero visual**: currently a CSS block diagram of the process (receive data → compose → ready posters → AI validation). To swap in a real video, GIF or screenshot, use the snippet in the comment | Hero (`hero-visual`) |
 | 8 | **Domain**: replace `https://adminix.example` in the canonical, `og:url` and `og:image` tags. `og:image` **must** be an absolute URL for LinkedIn | `<head>` (`domain`) |
 | 9 | **Contact**: confirm `hello@adminix.io`, and add the real LinkedIn URL | Footer (`contact`) |
 | 10 | **Logo**: uses the older Adminix logo (`assets/logo.png`, made transparent and cropped from the PNG you supplied), on a white label in the header and footer. When the new logo is ready, replace `assets/logo.png`, `assets/logo-mark.png` (icon) and `assets/favicon.png`; prefer SVG if you have it, and update the `width`/`height` on the two `<img>` tags. Re-render the OG image too | `logo` |
@@ -45,11 +45,10 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 Also check:
 - The success message ("we'll be in touch within one business day") is a commitment. Edit it in `main.js` if you can't keep it.
 - The Problem figures (100–200 posters a week, 3–5 days per campaign) and the Why Adminix claims (AI validation agent, subscription plus pay per poster, "no $30–50K annual contract", built for CEE retail) come from the Adminix investor deck. Re-check them if anything has changed.
-- The mock prices use ₴. Change them in `index.html` and `main.js` (`skus` array) if you're targeting a non-UA audience.
+- The mock prices use ₴. Change them in `index.html` if you're targeting a non-UA audience.
 - No analytics are included. Add your snippet before `</head>`. A successful form submit already fires `gtag('event', 'generate_lead')` if gtag is present.
 - After deploying, re-scrape the page in the [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) so the share preview picks up the image.
 
 ## Customizing
 
 - **Colors and fonts:** the tokens at the top of `styles.css`. The look is retail signage: `--signal` (Adminix blue at full saturation) for the hero and closing bands, `--ink` for How It Works and the footer, `--tag` (shelf-tag yellow) for buttons, the price tag, the ticker and the case-study band. Headlines use Archivo at a condensed width; labels and data use JetBrains Mono. The red inside the posters is the sample retailer's color, not Adminix's.
-- **Hero mock products:** the `skus` array in `main.js` and the matching `<li>` rows and `.prod-N` SVGs in `index.html`.
