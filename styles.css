@@ -132,38 +132,38 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 }
 
 /* Solution section: the four-stage flow on the blue band */
-.solution { background: var(--signal); color: var(--paper); }
-.solution .label { color: var(--tag); }
-.solution .head .sub { color: #E4E8FF; max-width: 44em; }
+.how { background: var(--signal); color: var(--paper); }
+.how .label { color: var(--tag); }
+.how .head .sub { color: #E4E8FF; max-width: 44em; }
 
-/* before / after: today's process vs Adminix, row by row */
-.ba { display: grid; gap: 20px; }
-@media (min-width: 860px) {
-  .ba { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(5, auto); gap: 0 24px; }
-  .ba-col { grid-row: 1 / span 5; display: grid; grid-template-rows: subgrid; }
-  .ba-col ul { display: contents; }
+/* Today vs With Adminix: one clean table on a white card */
+.vs { max-width: 1040px; background: var(--paper); color: var(--ink); border-radius: 4px; box-shadow: 8px 8px 0 var(--signal); overflow: hidden; }
+.vs table { width: 100%; border-collapse: collapse; }
+.vs th, .vs td { padding: 22px 28px; text-align: left; vertical-align: middle; }
+.vs thead th { padding-top: 26px; padding-bottom: 14px; font: 700 13px/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+.vs thead .vs-old { color: var(--muted); }
+.vs thead .vs-new span, .vs thead .vs-new { color: var(--ink); }
+.vs tbody tr + tr th, .vs tbody tr + tr td { border-top: 1px solid var(--line); }
+.vs tbody th { width: 26%; font: 700 12px/1.35 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.vs tbody td { width: 37%; font: 800 clamp(22px, 2.3vw, 30px)/1.05 var(--display); font-stretch: 75%; text-transform: uppercase; }
+.vs td.vs-old { color: #9CA1BC; }
+.vs .vs-new { background: var(--tag); }
+.vs tbody td.vs-new { color: var(--ink); }
+@media (max-width: 699px) {
+  .vs thead { display: none; }
+  .vs table, .vs tbody { display: block; }
+  .vs tbody tr { display: grid; grid-template-columns: 1fr 1fr; }
+  .vs tbody tr + tr { border-top: 1px solid var(--line); }
+  .vs tbody tr + tr th, .vs tbody tr + tr td { border-top: 0; }
+  .vs tbody th { grid-column: 1 / -1; width: auto; padding: 16px 18px 8px; }
+  .vs tbody td { width: auto; padding: 12px 18px 16px; font-size: 20px; }
+  .vs tbody td::before { display: block; margin-bottom: 6px; font: 700 10px/1 var(--mono); letter-spacing: .06em; color: var(--muted); }
+  .vs tbody td.vs-old::before { content: "Today"; }
+  .vs tbody td.vs-new::before { content: "With Adminix"; color: var(--ink); }
 }
-.ba-col { border-radius: 4px; padding: 8px 28px 12px; }
-.ba-col ul { list-style: none; margin: 0; padding: 0; }
-.ba-title { padding: 18px 0 14px; font: 850 clamp(26px, 2.6vw, 36px)/1 var(--display); font-stretch: 72%; text-transform: uppercase; }
-.ba-col li { display: grid; grid-template-columns: 30px 1fr; column-gap: 14px; align-items: start; padding: 18px 0; border-top: 1px solid; }
-.ba-col li::before { grid-row: span 2; display: grid; place-items: center; width: 30px; height: 30px; margin-top: 2px; font: 700 15px/1 var(--mono); }
-.ba-col li b { font: 850 clamp(26px, 2.6vw, 34px)/1 var(--display); font-stretch: 72%; text-transform: uppercase; }
-.ba-col li span { margin-top: 6px; font-size: 16px; line-height: 1.45; }
-.ba-before { border: 2px dashed rgba(255,255,255,.4); color: var(--mist); }
-.ba-before li { border-color: rgba(255,255,255,.18); }
-.ba-before li::before { content: "✕"; background: rgba(255,255,255,.12); color: var(--paper); }
-.ba-before li b { color: var(--paper); }
-.ba-after { background: var(--tag); color: var(--ink); box-shadow: 8px 8px 0 var(--ink); }
-.ba-after li { border-color: rgba(10,14,41,.15); }
-.ba-after li::before { content: "✓"; background: var(--ok); color: var(--paper); }
-.ba-after li span { color: #3B3A1E; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-.how-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; margin: clamp(64px, 7vw, 96px) 0 clamp(28px, 3vw, 40px); padding-top: clamp(28px, 3vw, 40px); border-top: 1px solid rgba(255,255,255,.2); }
-.how-head .label { margin: 0; color: var(--tag); }
-.how-sub { color: #E4E8FF; font-size: 17px; }
 
 /* flow diagram: receive data → compose → ready posters → AI validation */
 .flowchart { display: grid; gap: 8px; }
