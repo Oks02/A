@@ -6,7 +6,9 @@ A single-page marketing site. It's plain HTML, CSS and JS: no framework, no buil
 index.html          page markup (all 6 sections)
 styles.css          all styles (design tokens at the top under :root)
 main.js             hero animation, scroll reveals, sticky mobile CTA, form submit
-assets/favicon.svg
+assets/favicon.png   browser tab icon (logo mark only)
+assets/logo.png      full logo, transparent
+assets/logo-mark.png 256px mark for home-screen icons
 assets/og-image.png 1200×630 social share image (LinkedIn / Instagram / Slack previews)
 ```
 
@@ -38,7 +40,7 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 | 7 | **Hero visual**: currently an animated CSS mock. To swap in a real video, GIF or screenshot, use the snippet in the comment | Hero (`hero-visual`) |
 | 8 | **Domain**: replace `https://adminix.example` in the canonical, `og:url` and `og:image` tags. `og:image` **must** be an absolute URL for LinkedIn | `<head>` (`domain`) |
 | 9 | **Contact**: confirm `hello@adminix.io`, and add the real LinkedIn URL | Footer (`contact`) |
-| 10 | **Logo**: the "A" mark (recolored white for the blue header) is an approximation of the Adminix logo. The deck's slides are flattened images, so the real logo couldn't be extracted from them. Paste the real SVG into the `<symbol id="logo-mark">` at the top of `index.html` (the nav and footer both use it), and update `assets/favicon.svg` and the OG image | `logo` |
+| 10 | **Logo**: uses the older Adminix logo (`assets/logo.png`, made transparent and cropped from the PNG you supplied), on a white label in the header and footer. When the new logo is ready, replace `assets/logo.png`, `assets/logo-mark.png` (icon) and `assets/favicon.png`; prefer SVG if you have it, and update the `width`/`height` on the two `<img>` tags. Re-render the OG image too | `logo` |
 
 Also check:
 - The success message ("we'll be in touch within one business day") is a commitment. Edit it in `main.js` if you can't keep it.

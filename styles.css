@@ -87,8 +87,9 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 /* ---------- Nav ---------- */
 .nav { position: sticky; top: 0; z-index: 50; background: var(--signal); color: var(--paper); border-bottom: 1px solid rgba(255,255,255,.14); }
 .nav-inner { display: flex; align-items: center; gap: 28px; height: 68px; }
-.logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font: 800 24px/1 var(--display); letter-spacing: -0.02em; color: var(--paper); }
-.logo-mark { width: 30px; height: 30px; color: var(--paper); }
+/* Logo sits on a white label: the full-color mark and dark wordmark need a light ground. */
+.logo { display: inline-flex; align-items: center; flex: none; padding: 7px 12px; background: var(--paper); border-radius: 3px; box-shadow: 3px 3px 0 var(--ink); }
+.logo img { height: 26px; width: auto; }
 .nav-links { display: none; gap: 28px; margin-left: auto; font: 500 13px/1 var(--mono); text-transform: uppercase; letter-spacing: .06em; }
 .nav-links a { text-decoration: none; color: var(--mist); }
 .nav-links a:hover { color: var(--paper); }
@@ -335,8 +336,8 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 /* ---------- Footer ---------- */
 .footer { background: var(--ink); color: var(--paper); padding-block: 32px calc(32px + env(safe-area-inset-bottom)); }
 .footer-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; }
-.logo-small { font-size: 20px; }
-.logo-small .logo-mark { width: 24px; height: 24px; }
+.logo-small { padding: 6px 10px; box-shadow: 3px 3px 0 var(--signal); }
+.logo-small img { height: 20px; }
 .footer-links { display: flex; gap: 24px; margin-left: auto; font: 500 13px/1 var(--mono); }
 .footer-links a { color: var(--mist); text-decoration: none; }
 .footer-links a:hover { color: var(--tag); }
