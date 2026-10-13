@@ -99,7 +99,7 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 
 /* ---------- Hero ---------- */
 /* Two layers: headline + pitch on top, the process flow below with its own room. */
-.hero { background: var(--signal); color: var(--paper); padding-block: clamp(40px, 5vw, 72px) 0; overflow: hidden; }
+.hero { background: var(--signal); color: var(--paper); padding-block: clamp(48px, 6vw, 96px) clamp(64px, 7vw, 112px); }
 .hero-sub { display: grid; gap: 36px; margin-top: clamp(32px, 3.4vw, 44px); }
 @media (min-width: 900px) { .hero-sub { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 56px; align-items: start; } }
 .kicker { font: 600 13px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--mist); margin-bottom: 26px; }
@@ -129,28 +129,6 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 .tag::before { /* punched hole */
   content: ""; position: absolute; left: 20px; top: 50%; width: 12px; height: 12px; margin-top: -6px;
   border-radius: 50%; background: var(--signal);
-}
-
-/* hero visual: finished posters standing on the ticker like products on a shelf edge */
-.wall { display: grid; grid-template-columns: 1.25fr 1fr .62fr 1.25fr 1fr; gap: clamp(12px, 2vw, 28px); align-items: end; margin-top: clamp(56px, 6vw, 88px); }
-.wall-item { position: relative; min-width: 0; }
-.wall .poster { box-shadow: 6px 0 0 var(--ink); border-radius: 4px 4px 0 0; }
-.badge { position: absolute; z-index: 2; top: -12px; right: -8px; padding: 5px 8px; font: 700 10px/1 var(--mono); text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; box-shadow: 2px 2px 0 var(--ink); }
-.badge.ok { background: var(--ok); color: var(--paper); }
-.badge.flag { background: var(--tag); color: var(--ink); }
-.fmt { position: absolute; right: 6px; bottom: 6px; font: 700 9px/1 var(--mono); text-transform: uppercase; background: var(--ink); color: var(--paper); padding: 3px 5px; }
-.p916 .fmt { left: 6px; right: auto; top: 6px; bottom: auto; }
-.wall .p45-alt { background: var(--tag); }
-.p45-alt .price b { color: var(--ink); }
-.wall .p11-alt { background: var(--paper); color: var(--stamp); }
-.p11-alt .fmt { background: var(--stamp); }
-.wall .prod { display: block; }
-.p916 .art { flex: 1; display: grid; place-items: center; min-height: 0; }
-.p916 .art svg { height: 100%; max-height: 90px; width: auto; }
-@media (max-width: 699px) {
-  .wall { grid-template-columns: 1.25fr 1fr .62fr; }
-  .wall-extra { display: none; }
-  .badge { font-size: 9px; padding: 4px 6px; right: -4px; }
 }
 
 /* Solution section: the four-stage flow on the blue band */

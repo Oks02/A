@@ -41,7 +41,7 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 | 4 | **Turnaround promise**: `[within 48 hours]` | Closing CTA copy |
 | 5 | **Form endpoint**: Netlify needs nothing. On Vercel, set `action` to a Formspree, Basin or Tally URL | `<form class="lead-form">` (`form-endpoint`) |
 | 6 | **Final CTA copy**: "See it with your own catalog" appears 3×, plus "Try your catalog" in the nav | Hero, form button, sticky mobile bar |
-| 7 | **Hero visual**: a CSS mock of finished posters standing on the ticker, each marked "Checked" by AI validation. Swap in real generated posters from the pilot when you have them (`hero-visual`). The process diagram lives in the Solution section | Hero (`hero-visual`) |
+| 7 | **Hero visual**: the hero is typographic for now. When you have a real product screenshot or short screen recording of Adminix, add it at the `hero-visual` comment (`.hero-video` is already styled). The process diagram lives in the Solution section | Hero (`hero-visual`) |
 | 11 | **FAQ: data handling**: the "What happens to our data?" answer needs your hosting location, retention period and access policy | FAQ (`data-policy`) |
 | 8 | **Domain**: replace `https://adminix.example` in the canonical, `og:url` and `og:image` tags. `og:image` **must** be an absolute URL for LinkedIn | `<head>` (`domain`) |
 | 9 | **Contact**: confirm `hello@adminix.io`, and add the real LinkedIn URL | Footer (`contact`) |
