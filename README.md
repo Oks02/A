@@ -12,6 +12,10 @@ assets/logo-mark.png 256px mark for home-screen icons
 assets/og-image.png 1200×630 social share image (LinkedIn / Instagram / Slack previews)
 ```
 
+## Page structure
+
+Follows the standard B2B SaaS landing order: hero → social proof (ticker) → problem → solution / how it works → why Adminix (benefits) → use cases → case study → who it's for → FAQ (objections) → final CTA.
+
 ## Run locally
 
 ```bash
@@ -37,7 +41,8 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 | 4 | **Turnaround promise**: `[within 48 hours]` | Closing CTA copy |
 | 5 | **Form endpoint**: Netlify needs nothing. On Vercel, set `action` to a Formspree, Basin or Tally URL | `<form class="lead-form">` (`form-endpoint`) |
 | 6 | **Final CTA copy**: "See it with your own catalog" appears 3×, plus "Try your catalog" in the nav | Hero, form button, sticky mobile bar |
-| 7 | **Hero visual**: currently a CSS block diagram of the process (receive data → compose → ready posters → AI validation). To swap in a real video, GIF or screenshot, use the snippet in the comment | Hero (`hero-visual`) |
+| 7 | **Hero visual**: a CSS mock of finished posters standing on the ticker, each marked "Checked" by AI validation. Swap in real generated posters from the pilot when you have them (`hero-visual`). The process diagram lives in the Solution section | Hero (`hero-visual`) |
+| 11 | **FAQ: data handling**: the "What happens to our data?" answer needs your hosting location, retention period and access policy | FAQ (`data-policy`) |
 | 8 | **Domain**: replace `https://adminix.example` in the canonical, `og:url` and `og:image` tags. `og:image` **must** be an absolute URL for LinkedIn | `<head>` (`domain`) |
 | 9 | **Contact**: confirm `hello@adminix.io`, and add the real LinkedIn URL | Footer (`contact`) |
 | 10 | **Logo**: uses the older Adminix logo (`assets/logo.png`, made transparent and cropped from the PNG you supplied), on a white label in the header and footer. When the new logo is ready, replace `assets/logo.png`, `assets/logo-mark.png` (icon) and `assets/favicon.png`; prefer SVG if you have it, and update the `width`/`height` on the two `<img>` tags. Re-render the OG image too | `logo` |
