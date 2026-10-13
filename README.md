@@ -3,7 +3,7 @@
 A single-page marketing site. It's plain HTML, CSS and JS: no framework, no build step, no dependencies.
 
 ```
-index.html          page markup (all 6 sections)
+index.html          page markup
 styles.css          all styles (design tokens at the top under :root)
 main.js             scroll reveals, sticky mobile CTA, form submit
 assets/favicon.png   browser tab icon (logo mark only)

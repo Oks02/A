@@ -99,18 +99,18 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 
 /* ---------- Hero ---------- */
 /* Two layers: headline + pitch on top, the process flow below with its own room. */
-.hero { background: var(--signal); color: var(--paper); padding-block: clamp(56px, 8vw, 112px) clamp(64px, 8vw, 112px); }
-.hero-top { display: grid; gap: 40px; }
-@media (min-width: 1040px) { .hero-top { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 72px; align-items: end; } }
+.hero { background: var(--signal); color: var(--paper); padding-block: clamp(40px, 5vw, 72px) clamp(56px, 6vw, 88px); }
+.hero-sub { display: grid; gap: 36px; margin-top: clamp(32px, 3.4vw, 44px); }
+@media (min-width: 900px) { .hero-sub { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 56px; align-items: start; } }
 .kicker { font: 600 13px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--mist); margin-bottom: 26px; }
-.hero h1 { font-size: clamp(50px, 6.8vw, 104px); }
+.hero h1 { font-size: clamp(50px, 7.4vw, 112px); }
 .hero .lede { max-width: 30em; }
-.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
 @media (max-width: 520px) { .actions .btn { width: 100%; } }
 .hero-video { width: 100%; height: auto; margin-top: clamp(56px, 7vw, 96px); border-radius: 4px; box-shadow: 8px 8px 0 var(--ink); }
 
 /* Price tag hanging on a white string that runs from its punched hole. */
-.tag-wrap { position: relative; display: inline-block; margin-top: clamp(32px, 3.4vw, 44px); }
+.tag-wrap { position: relative; justify-self: start; align-self: start; margin-top: 6px; }
 .tag-wrap::before { /* the string, starting at the hole */
   content: ""; position: absolute; z-index: 2; left: 26px; top: 50%; width: clamp(60px, 5.6vw, 76px); height: 2px;
   background: rgba(255,255,255,.85); transform-origin: left center; transform: rotate(256deg); /* up to the headline */
@@ -132,11 +132,22 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 }
 
 /* hero flow diagram: receive data → compose → ready posters → AI validation */
-.flowchart { display: grid; gap: 8px; margin-top: clamp(64px, 8vw, 104px); padding-top: clamp(32px, 4vw, 48px); border-top: 1px solid rgba(255,255,255,.2); }
+.how { margin-top: clamp(48px, 5vw, 72px); padding-top: clamp(28px, 3vw, 40px); border-top: 1px solid rgba(255,255,255,.2); }
+.fc-intro { max-width: 46em; margin-bottom: clamp(28px, 3vw, 40px); font-size: 17px; color: #E4E8FF; }
+.fc-intro b { display: inline-block; margin-right: 10px; padding: 4px 8px; background: var(--paper); color: var(--signal); font: 700 12px/1.2 var(--mono); text-transform: uppercase; letter-spacing: .08em; vertical-align: 2px; }
+.flowchart { display: grid; gap: 8px; }
 @media (min-width: 1100px) {
-  .flowchart { grid-template-columns: minmax(0, .8fr) 44px minmax(0, .95fr) 44px minmax(0, 1.7fr) 44px minmax(0, .9fr); gap: 0 10px; align-items: stretch; }
+  .flowchart { grid-template-columns: minmax(0, .8fr) 44px minmax(0, .95fr) 44px minmax(0, 1.7fr) 44px minmax(0, .9fr); grid-template-rows: auto 1fr auto; gap: 0 10px; align-items: stretch; }
 }
-.fc-stage { display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+.fc-stage { display: grid; grid-template-rows: auto 1fr auto; min-width: 0; }
+.fc-note { margin-top: 18px; font-size: 14px; line-height: 1.45; color: var(--mist); }
+@media (max-width: 1099px) { .fc-note { margin-top: 12px; } }
+/* desktop: share rows across stages so labels, blocks and captions line up */
+@media (min-width: 1100px) {
+  .fc-stage { grid-row: 1 / span 3; grid-template-rows: subgrid; }
+  .arrow { grid-row: 2; margin-top: 0; }
+  .fc-note { align-self: start; }
+}
 .fc-body { display: grid; align-content: center; gap: 10px; }
 .stage { display: flex; align-items: center; gap: 8px; margin: 0 0 14px; font: 700 11px/1.2 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--mist); }
 .stage span { flex: none; display: grid; place-items: center; width: 18px; height: 18px; background: var(--paper); color: var(--signal); font-size: 10px; }
@@ -245,32 +256,8 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 .fact-hot span { color: var(--ink); }
 @media (max-width: 420px) { .facts { grid-template-columns: 1fr; } }
 
-/* How it works */
-.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
-@media (min-width: 720px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1140px) { .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-.step {
-  display: flex; flex-direction: column; gap: 12px;
-  background: var(--paper); color: var(--ink); border-radius: 4px; padding: 24px;
-  box-shadow: 6px 6px 0 var(--signal);
-}
-.step-num { font: 900 64px/.8 var(--display); font-stretch: 70%; color: var(--signal); margin-bottom: 8px; }
-.step p { color: var(--muted); font-size: 16px; }
-.mini { margin-top: auto; padding-top: 12px; display: grid; gap: 6px; font: 400 12px/1 var(--mono); }
-.mini > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 8px; padding: 9px 10px; border: 1px solid var(--line); border-radius: 4px; }
-.mini b { font-weight: 600; }
 .chip { display: inline-block; padding: 4px 6px; font: 700 10px/1 var(--mono); text-transform: uppercase; letter-spacing: .04em; background: var(--light); color: var(--muted); border-radius: 2px; white-space: nowrap; }
 .chip-ok { background: #DDF6E7; color: var(--ok); }
-.chip-blue { background: #E2E7FF; color: var(--signal); }
-.chip-hot { background: #FFE3DC; color: #C0261B; }
-.mini-formats { display: flex; align-items: flex-end; justify-content: center; gap: 10px; min-height: 120px; padding: 12px; border: 1px solid var(--line); border-radius: 4px; }
-.mini-formats .f { display: grid; place-items: end start; padding: 6px; font: 700 10px/1 var(--mono); color: var(--paper); border-radius: 3px; box-shadow: 3px 3px 0 var(--ink); }
-.f45 { width: 64px; height: 80px; background: var(--signal); }
-.f11 { width: 66px; height: 66px; background: var(--stamp); }
-.f916 { width: 48px; height: 86px; background: var(--ink); }
-.mini-editor { display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-end; min-height: 120px; padding: 12px; border: 1px solid var(--line); border-radius: 4px; }
-.mini-editor span { padding: 7px 9px; border: 1px solid var(--line); border-radius: 3px; font-weight: 600; }
-.mini-editor .go { background: var(--tag); border-color: var(--ink); box-shadow: 2px 2px 0 var(--ink); }
 
 /* Use cases */
 .use-grid { display: grid; gap: 24px; }
