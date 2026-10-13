@@ -14,7 +14,7 @@ assets/og-image.png 1200×630 social share image (LinkedIn / Instagram / Slack p
 
 ## Page structure
 
-Follows the standard B2B SaaS landing order: hero → social proof (ticker) → problem → solution / how it works → why Adminix (benefits) → use cases → case study → who it's for → FAQ (objections) → final CTA.
+Follows the standard B2B SaaS landing order: hero → social proof (ticker) → problem → solution (comparison table + how it works) → use cases → case study → who it's for → FAQ (objections) → final CTA.
 
 ## Run locally
 
@@ -49,7 +49,7 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 
 Also check:
 - The success message ("we'll be in touch within one business day") is a commitment. Edit it in `main.js` if you can't keep it.
-- The Problem figures (100–200 posters a week, 3–5 days per campaign) and the Why Adminix claims (AI validation agent checking prices, product names and brand guidelines, subscription plus pay per poster, "no $30–50K annual contract", built for CEE retail) come from the Adminix investor deck. Re-check them if anything has changed.
+- The Problem figures (100–200 posters a week, 3–5 days per campaign) and the comparison table in the Solution section (ad automation platforms at $30–50K+ a year, no output checking in competing tools, AI validation of prices, product names and brand guidelines, subscription plus pay per poster, built for CEE retail) come from the Adminix investor deck. Competitors are described by category, not named. Re-check them if anything has changed.
 - The mock prices use ₴. Change them in `index.html` if you're targeting a non-UA audience.
 - No analytics are included. Add your snippet before `</head>`. A successful form submit already fires `gtag('event', 'generate_lead')` if gtag is present.
 - After deploying, re-scrape the page in the [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) so the share preview picks up the image.
