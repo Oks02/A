@@ -109,18 +109,15 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 @media (max-width: 520px) { .actions .btn { width: 100%; } }
 .hero-video { width: 100%; height: auto; margin-top: clamp(56px, 7vw, 96px); border-radius: 4px; box-shadow: 8px 8px 0 var(--ink); }
 
-/* Price tag pinned to the board: the red pushpin goes through the tag's hole,
-   and the tag hangs (rotates) from that point. */
+/* Price tag hanging on a white string that runs from its punched hole. */
 .tag-wrap { position: relative; display: inline-block; margin-top: clamp(32px, 3.4vw, 44px); }
-.pin {
-  position: absolute; z-index: 2; left: 15px; top: 50%; width: 20px; height: 20px; margin-top: -10px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #FFB4A3 0 18%, var(--stamp) 45%, #A8240F 100%);
-  box-shadow: 2px 3px 0 var(--ink);
+.tag-wrap::before { /* the string, starting at the hole */
+  content: ""; position: absolute; z-index: 2; left: 26px; top: 50%; width: clamp(60px, 5.6vw, 76px); height: 2px;
+  background: rgba(255,255,255,.85); transform-origin: left center; transform: rotate(256deg); /* up to the headline */
 }
 .tag {
   position: relative; display: inline-flex; align-items: center;
-  padding: 14px 26px 14px 48px;
+  padding: 14px 26px 14px 46px;
   background: var(--tag); color: var(--ink);
   font: 850 clamp(26px, 3vw, 40px)/1 var(--display); font-stretch: 72%; text-transform: uppercase;
   clip-path: polygon(22px 0, 100% 0, 100% 100%, 22px 100%, 0 50%);
@@ -129,6 +126,10 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
   transition: transform .4s cubic-bezier(.3, 1.6, .5, 1);
 }
 .tag-wrap:hover .tag { transform: rotate(2deg); }
+.tag::before { /* punched hole */
+  content: ""; position: absolute; left: 20px; top: 50%; width: 12px; height: 12px; margin-top: -6px;
+  border-radius: 50%; background: var(--signal);
+}
 
 /* hero flow diagram: receive data → compose → ready posters → AI validation */
 .flowchart { display: grid; gap: 8px; margin-top: clamp(64px, 8vw, 104px); padding-top: clamp(32px, 4vw, 48px); border-top: 1px solid rgba(255,255,255,.2); }
