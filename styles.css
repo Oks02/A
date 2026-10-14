@@ -226,6 +226,14 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 .fc-outputs .p11 .off { font-size: 30px; }
 .fc-outputs .p11 .name { font-size: 10px; padding-right: 0; }
 .fc-outputs .p916 .price { font-size: 20px; white-space: nowrap; }
+/* in-store formats: A-series posters and a landscape shelf tag */
+.fc-outputs { grid-template-columns: 1fr 1fr .95fr; }
+.poster.pa4 { aspect-ratio: 210 / 297; }
+.ptag { aspect-ratio: 3 / 2; background: var(--tag); color: var(--ink); padding: 8px 10px; display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto 1fr; align-items: end; gap: 2px 6px; }
+.ptag .name { grid-column: 1 / -1; align-self: start; font: 800 10px/1.1 var(--display); font-stretch: 80%; text-transform: uppercase; }
+.ptag .price { font: 900 22px/.9 var(--display); font-stretch: 70%; white-space: nowrap; }
+.ptag .price s { display: block; font: 400 9px/1.2 var(--mono); color: #6B5A10; }
+.ptag .off { background: var(--stamp); color: var(--paper); font: 900 11px/1 var(--display); font-stretch: 75%; padding: 3px 4px; }
 .out > small { font: 700 10px/1 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--mist); }
 
 /* stages lift in order, 4.8s loop */
