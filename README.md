@@ -47,7 +47,7 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 Also check:
 - **Case study:** the Fozzy Group section was removed until the contract is signed. When it is (and they approve being named), it can come back between Use cases and Who it's for, with real metrics and a quote; it's in git history (commit before "Remove Fozzy case study").
 - The success message ("we'll be in touch within one business day") is a commitment. Edit it in `main.js` if you can't keep it.
-- The Problem figures (100–200 posters a week, 3–5 days per campaign) and the "Today vs With Adminix" points in the Solution section (3–5 days vs minutes, AI validation of prices, product names and brand guidelines, one manager instead of designers, subscription plus pay per poster) come from the Adminix investor deck. Re-check them if anything has changed.
+- The Problem figures (100–200 posters a week, 3–5 days per campaign) and the "Today vs With Adminix" points in the Solution section (3–5 days vs hours, AI validation of prices, product names and brand guidelines, one manager instead of designers, subscription plus pay per poster) come from the Adminix investor deck. Re-check them if anything has changed.
 - The mock prices use ₴. Change them in `index.html` if you're targeting a non-UA audience.
 - No analytics are included. Add your snippet before `</head>`. A successful form submit already fires `gtag('event', 'generate_lead')` if gtag is present.
 - After deploying, re-scrape the page in the [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) so the share preview picks up the image.
