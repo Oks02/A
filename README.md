@@ -54,4 +54,4 @@ Also check:
 
 ## Customizing
 
-- **Colors and fonts:** the tokens at the top of `styles.css`. The look is retail signage: `--signal` (Adminix blue at full saturation) for the hero and closing bands, `--ink` for How It Works and the footer, `--tag` (shelf-tag yellow) for buttons, the price tag, the ticker and the Who it's for band. Headlines use Archivo at a condensed width; labels and data use JetBrains Mono. The red inside the posters is the sample retailer's color, not Adminix's.
+- **Colors and fonts:** the tokens at the top of `styles.css`. Calm enterprise palette: `--signal` (deep Adminix navy-blue) for the hero, How it works and final CTA bands; white and light-gray content sections; `--accent` (Adminix blue) for labels and focus states; `--tag` (warm amber) only for primary buttons, the hanging price tag and the Adminix highlights. Headlines use Archivo at a condensed width; labels and data use JetBrains Mono. The red inside the sample posters is the sample retailer's color, not Adminix's.
