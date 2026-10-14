@@ -136,30 +136,36 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 .how .label { color: var(--tag); }
 .how .head .sub { color: #E4E8FF; max-width: 44em; }
 
-/* Today vs With Adminix: one clean table on a white card */
-.vs { max-width: 1040px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; box-shadow: var(--shadow); overflow: hidden; }
-.vs table { width: 100%; border-collapse: collapse; }
-.vs th, .vs td { padding: 22px 28px; text-align: left; vertical-align: middle; }
-.vs thead th { padding-top: 26px; padding-bottom: 14px; font: 700 13px/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-.vs thead .vs-old { color: var(--muted); }
-.vs thead .vs-new span, .vs thead .vs-new { color: var(--ink); }
-.vs tbody tr + tr th, .vs tbody tr + tr td { border-top: 1px solid var(--line); }
-.vs tbody th { width: 26%; font: 700 12px/1.35 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
-.vs tbody td { width: 37%; font: 800 clamp(22px, 2.3vw, 30px)/1.05 var(--display); font-stretch: 75%; text-transform: uppercase; }
-.vs td.vs-old { color: #9CA1BC; }
-.vs .vs-new { background: #FBF3D6; }
-.vs tbody td.vs-new { color: var(--ink); }
-@media (max-width: 699px) {
-  .vs thead { display: none; }
-  .vs table, .vs tbody { display: block; }
-  .vs tbody tr { display: grid; grid-template-columns: 1fr 1fr; }
-  .vs tbody tr + tr { border-top: 1px solid var(--line); }
-  .vs tbody tr + tr th, .vs tbody tr + tr td { border-top: 0; }
-  .vs tbody th { grid-column: 1 / -1; width: auto; padding: 16px 18px 8px; }
-  .vs tbody td { width: auto; padding: 12px 18px 16px; font-size: 20px; }
-  .vs tbody td::before { display: block; margin-bottom: 6px; font: 700 10px/1 var(--mono); letter-spacing: .06em; color: var(--muted); }
-  .vs tbody td.vs-old::before { content: "Today"; }
-  .vs tbody td.vs-new::before { content: "With Adminix"; color: var(--ink); }
+/* Today → With Adminix: two cards, rows aligned, the Adminix card carries the weight */
+.shift { display: grid; gap: 16px; align-items: stretch; }
+@media (min-width: 900px) {
+  .shift { grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1.15fr); grid-template-rows: repeat(5, auto); gap: 0 20px; }
+  .shift-card { grid-row: 1 / span 5; display: grid; grid-template-rows: subgrid; }
+  .shift-arrow { grid-row: 1 / span 5; }
+}
+.shift-card { border-radius: 10px; padding: 8px 32px 12px; }
+.shift-title { padding: 24px 0 18px; font: 700 13px/1 var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+.shift-row { display: grid; gap: 8px; align-content: center; padding: 20px 0; border-top: 1px solid; }
+.shift-row small { font: 600 11px/1.2 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+.shift-row b { font: 800 clamp(22px, 2.2vw, 30px)/1.1 var(--display); font-stretch: 78%; text-transform: uppercase; }
+
+.shift-before { background: var(--light); border: 1px solid var(--line); color: var(--muted); }
+.shift-before .shift-title { color: var(--muted); }
+.shift-before .shift-row { border-color: var(--line); }
+.shift-before .shift-row small { color: #8A90A8; }
+.shift-before .shift-row b { color: #7B8199; font-weight: 700; }
+
+.shift-after { background: var(--signal); color: var(--paper); box-shadow: 0 24px 50px -24px rgba(13,21,48,.55); }
+.shift-after .shift-title { color: var(--tag); }
+.shift-after .shift-row { border-color: rgba(255,255,255,.14); }
+.shift-after .shift-row small { color: var(--mist); }
+.shift-after .shift-row b { display: flex; align-items: center; gap: 12px; }
+.shift-after .shift-row b::before { content: "✓"; flex: none; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--tag); color: var(--ink); font: 700 14px/1 var(--mono); }
+
+.shift-arrow { align-self: center; justify-self: center; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--tag); color: var(--ink); font: 700 24px/1 var(--mono); box-shadow: 0 8px 20px -8px rgba(13,21,48,.4); }
+@media (max-width: 899px) {
+  .shift-arrow { transform: rotate(90deg); margin: -4px 0; }
+  .shift-card { padding: 4px 22px 8px; }
 }
 
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
