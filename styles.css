@@ -1,7 +1,7 @@
 /* ==========================================================================
    Adminix landing page — "retail signage" direction.
    Layout: full-bleed color bands like in-store promo signage. Signal-blue
-   hero and CTA, ink How-it-works, yellow proof band, light content bands.
+   hero and CTA, ink Solution and FAQ, yellow ticker and Who-it's-for band, light content bands.
    Condensed uppercase display type, monospaced data labels, hard shadows.
    One deliberate light look (bands carry their own colors; no dark variant).
    ========================================================================== */
@@ -48,7 +48,7 @@ h1 { font-size: clamp(50px, 6.2vw, 96px); line-height: .86; font-stretch: 68%; }
 h2 { font-size: clamp(40px, 5.6vw, 80px); line-height: .9; }
 h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 :focus-visible { outline: 3px solid var(--tag); outline-offset: 3px; }
-.light :focus-visible, .proof :focus-visible, .lead-form :focus-visible { outline-color: var(--signal); }
+.light :focus-visible, .tagband :focus-visible, .lead-form :focus-visible { outline-color: var(--signal); }
 
 .wrap { width: 100%; max-width: 1280px; margin: 0 auto; padding-inline: max(16px, 4vw); }
 
@@ -63,7 +63,6 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
   font: 600 13px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--signal);
 }
 .dark .label, .cta .label { color: var(--tag); }
-.proof .label { color: var(--ink); }
 .lede { font-size: clamp(17px, 1.5vw, 20px); color: #E4E8FF; max-width: 34em; }
 .lede-dark { font-size: clamp(17px, 1.5vw, 20px); color: var(--muted); max-width: 34em; }
 
@@ -318,20 +317,10 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 .art-sku small { display: block; font: 400 12px/1.2 var(--mono); color: var(--muted); }
 .art-sku b { display: block; font: 900 40px/1 var(--display); font-stretch: 70%; margin: 4px 0 6px; }
 
-/* Proof */
-.proof { background: var(--tag); color: var(--ink); border-block: 3px solid var(--ink); }
-.proof-grid { display: grid; gap: 40px 64px; align-items: center; }
-@media (min-width: 960px) { .proof-grid { grid-template-columns: 1.1fr 1fr; } }
-.proof .lede-dark { margin-top: 22px; color: #3B3A1E; }
-.live-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ok); flex: none; box-shadow: 0 0 0 0 rgba(18,161,80,.5); animation: ping 2s ease-out infinite; }
-@keyframes ping { 70%, 100% { box-shadow: 0 0 0 8px rgba(18,161,80,0); } }
-.proof-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.stat { background: var(--paper); border: 2px solid var(--ink); border-radius: 4px; padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px; }
-.stat strong { align-self: flex-start; font: 900 clamp(48px, 6vw, 80px)/.85 var(--display); font-stretch: 68%; color: var(--signal); }
-.stat span { font: 600 12px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
-.quote { grid-column: 1 / -1; margin: 0; background: var(--ink); color: var(--paper); border-radius: 4px; padding: 20px 22px; }
-.quote blockquote { margin: 0; font-size: 18px; line-height: 1.45; }
-.quote figcaption { margin-top: 10px; font: 600 12px/1.3 var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--mist); }
+/* Yellow band (Who it's for) */
+.tagband { background: var(--tag); color: var(--ink); border-block: 3px solid var(--ink); }
+.tagband .label { color: var(--ink); }
+.tagband .fit { color: #3B3A1E; }
 
 /* Who it's for */
 .personas { display: grid; gap: 20px; }
