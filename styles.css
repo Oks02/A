@@ -352,8 +352,6 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 .persona-for { justify-self: start; background: var(--ink); color: var(--tag); font: 700 11px/1 var(--mono); text-transform: uppercase; letter-spacing: .1em; padding: 5px 8px; }
 .persona h3 { font-size: clamp(28px, 2.6vw, 36px); }
 .persona p { color: var(--muted); font-size: 16px; }
-.fit { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; font: 500 13px/1.5 var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
-.fit b { background: var(--signal); color: var(--paper); padding: 4px 8px; font-weight: 700; }
 
 /* FAQ */
 .faq-grid { display: grid; gap: 8px 64px; }
