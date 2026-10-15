@@ -353,12 +353,6 @@ h3 { font-size: clamp(24px, 2.2vw, 30px); line-height: 1; font-stretch: 75%; }
 .persona h3 { font-size: clamp(28px, 2.6vw, 36px); }
 .persona p { color: var(--muted); font-size: 16px; }
 
-/* Mid-page call to action after the main persuasion blocks */
-.mid-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: clamp(40px, 5vw, 64px); }
-.mid-cta p { font-size: 16px; color: var(--muted); }
-.how .mid-cta p { color: var(--mist); }
-@media (max-width: 520px) { .mid-cta .btn { width: 100%; } }
-
 /* FAQ */
 .faq-grid { display: grid; gap: 8px 64px; }
 @media (min-width: 960px) { .faq-grid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: start; } }
