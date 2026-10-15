@@ -35,14 +35,14 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 
 | # | What | Where |
 |---|------|-------|
-| 1 | **Turnaround promise**: `[within 48 hours]` | Closing CTA copy |
+| 1 | **Turnaround promise**: "within 48 hours" for the pilot sample (set; change it if you can't keep it) | Closing CTA copy |
 | 2 | **Form endpoint**: Netlify needs nothing. On Vercel, set `action` to a Formspree, Basin or Tally URL | `<form class="lead-form">` (`form-endpoint`) |
 | 3 | **Final CTA copy**: "See it with your own catalog" appears 3×, plus "Try your catalog" in the nav | Hero, form button, sticky mobile bar |
 | 4 | **Hero visual**: the hero is typographic for now. When you have a real product screenshot or short screen recording of Adminix, add it at the `hero-visual` comment (`.hero-video` is already styled) | Hero (`hero-visual`) |
 | 5 | **FAQ: data protection** (drafted, verify): EU hosting, encryption in transit and at rest, access limited to client team and Adminix support staff, NDA before pilot, DPA for production, deletion on request, no training models for other clients | FAQ (`VERIFY(data-policy)`) |
 | 5a | **FAQ: integrations** (drafted, verify): ERP, PIM or promo planning system via API, SFTP or scheduled export; affected posters regenerate on price change | FAQ (`VERIFY(integrations)`) |
 | 6 | **Domain**: replace `https://adminix.example` in the canonical, `og:url` and `og:image` tags. `og:image` **must** be an absolute URL for LinkedIn | `<head>` (`domain`) |
-| 7 | **Contact**: confirm `hello@adminix.io`, and add the real LinkedIn URL | Footer (`contact`) |
+| 7 | **Contact**: email is `contact@adminix.io`; add the real LinkedIn URL | Footer (`contact`) |
 | 8 | **Logo**: uses the older Adminix logo (`assets/logo.png`, made transparent and cropped from the PNG you supplied), on a white label in the header and footer. When the new logo is ready, replace `assets/logo.png`, `assets/logo-mark.png` (icon) and `assets/favicon.png`; prefer SVG if you have it, and update the `width`/`height` on the two `<img>` tags. Re-render the OG image too | `logo` |
 
 Also check:
