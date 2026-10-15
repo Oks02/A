@@ -39,7 +39,9 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 | 2 | **Form endpoint**: Netlify needs nothing. On Vercel, set `action` to a Formspree, Basin or Tally URL | `<form class="lead-form">` (`form-endpoint`) |
 | 3 | **Final CTA copy**: "See it with your own catalog" appears 3×, plus "Try your catalog" in the nav | Hero, form button, sticky mobile bar |
 | 4 | **Hero visual**: the hero is typographic for now. When you have a real product screenshot or short screen recording of Adminix, add it at the `hero-visual` comment (`.hero-video` is already styled) | Hero (`hero-visual`) |
-| 5 | **FAQ: data handling**: the "What happens to our data?" answer needs your hosting location, retention period and access policy | FAQ (`data-policy`) |
+| 5 | **FAQ: data protection**: the "How is our data protected?" answer needs hosting location, encryption, retention period, access policy and whether you sign an NDA/DPA | FAQ (`data-policy`) |
+| 5a | **FAQ: integrations**: name the systems you actually connect to (ERP, PIM, promo planning) | FAQ (`integrations`) |
+| 5b | **FAQ: rollout time**: typical weeks from pilot to full store network | FAQ (`rollout`) |
 | 6 | **Domain**: replace `https://adminix.example` in the canonical, `og:url` and `og:image` tags. `og:image` **must** be an absolute URL for LinkedIn | `<head>` (`domain`) |
 | 7 | **Contact**: confirm `hello@adminix.io`, and add the real LinkedIn URL | Footer (`contact`) |
 | 8 | **Logo**: uses the older Adminix logo (`assets/logo.png`, made transparent and cropped from the PNG you supplied), on a white label in the header and footer. When the new logo is ready, replace `assets/logo.png`, `assets/logo-mark.png` (icon) and `assets/favicon.png`; prefer SVG if you have it, and update the `width`/`height` on the two `<img>` tags. Re-render the OG image too | `logo` |
