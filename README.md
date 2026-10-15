@@ -10,6 +10,8 @@ assets/favicon.png   browser tab icon (logo mark only)
 assets/logo.png      full logo, transparent
 assets/logo-mark.png 256px mark for home-screen icons
 assets/og-image.png 1200×630 social share image (LinkedIn / Instagram / Slack previews)
+robots.txt          lets all crawlers in, points to the sitemap
+sitemap.xml         the single page URL for Google Search Console
 ```
 
 ## Page structure
@@ -41,7 +43,7 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 | 4 | **Hero visual**: the hero is typographic for now. When you have a real product screenshot or short screen recording of Adminix, add it at the `hero-visual` comment (`.hero-video` is already styled) | Hero (`hero-visual`) |
 | 5 | **FAQ: data protection** (drafted, verify): EU hosting, encryption in transit and at rest, access limited to client team and Adminix support staff, NDA before pilot, DPA for production, deletion on request, no training models for other clients | FAQ (`VERIFY(data-policy)`) |
 | 5a | **FAQ: integrations** (drafted, verify): ERP, PIM or promo planning system via API, SFTP or scheduled export; affected posters regenerate on price change | FAQ (`VERIFY(integrations)`) |
-| 6 | **Domain**: replace `https://adminix.example` in the canonical, `og:url` and `og:image` tags. `og:image` **must** be an absolute URL for LinkedIn | `<head>` (`domain`) |
+| 6 | **Domain**: set to `https://www.adminix.io`. If the page lives at another URL, replace it everywhere in the `<head>` (canonical, Open Graph, Twitter, JSON-LD), `robots.txt` and `sitemap.xml`. `og:image` **must** stay an absolute URL for LinkedIn | `<head>` (`domain`) |
 | 8 | **Logo**: uses the older Adminix logo (`assets/logo.png`, made transparent and cropped from the PNG you supplied), on a white label in the header and footer. When the new logo is ready, replace `assets/logo.png`, `assets/logo-mark.png` (icon) and `assets/favicon.png`; prefer SVG if you have it, and update the `width`/`height` on the two `<img>` tags. Re-render the OG image too | `logo` |
 
 Also check:
@@ -51,6 +53,24 @@ Also check:
 - The mock prices use ₴. Change them in `index.html` if you're targeting a non-UA audience.
 - No analytics are included. Add your snippet before `</head>`. A successful form submit already fires `gtag('event', 'generate_lead')` if gtag is present.
 - After deploying, re-scrape the page in the [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) so the share preview picks up the image.
+
+## SEO and Google indexing
+
+Already in place:
+- Title (under 60 characters), meta description (under 155), `robots` set to index and follow, canonical URL and `hreflang`.
+- Open Graph and Twitter tags with the 1200×630 share image.
+- JSON-LD structured data: Organization (logo, email, LinkedIn), WebSite, WebPage, SoftwareApplication and FAQPage. The FAQ entries copy the visible FAQ text; if you edit a FAQ answer, update the JSON-LD too.
+- `robots.txt` and `sitemap.xml` at the site root.
+- One `<h1>`, one `<h2>` per section, `lang="en"`, alt text on images, mobile viewport.
+
+After you deploy:
+1. Add the domain in [Google Search Console](https://search.google.com/search-console) and verify it (a DNS TXT record is easiest; or add the `google-site-verification` meta tag it gives you to the `<head>`).
+2. Submit `https://www.adminix.io/sitemap.xml` under Sitemaps.
+3. Use URL Inspection → Request indexing for the home page.
+4. Check the structured data with the [Rich Results Test](https://search.google.com/test/rich-results).
+5. Update `<lastmod>` in `sitemap.xml` when the page changes meaningfully.
+
+If the landing page replaces an existing page on adminix.io, set up a 301 redirect from any old URLs so their ranking carries over.
 
 ## Customizing
 

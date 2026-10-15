@@ -3,24 +3,169 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Adminix — Promo posters from your product data, in hours</title>
-  <meta name="description" content="Adminix connects to your ERP, e-commerce feed or Excel and turns every SKU into brand-compliant, AI-checked promo posters and banners for every channel. Creative automation built for retail chains.">
+  <title>Adminix: AI promo posters for retail chains, in hours</title>
+  <meta name="description" content="Adminix turns product and promo data into brand-compliant, AI-validated in-store posters in hours, not days. Creative automation for retail chains.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Adminix">
   <meta name="theme-color" content="#1B2C66">
 
-  <!-- PLACEHOLDER(domain): replace https://adminix.example with the production URL (canonical + og:url + og:image). -->
-  <link rel="canonical" href="https://adminix.example/">
+  <!-- PLACEHOLDER(domain): set to https://www.adminix.io. If the page lives elsewhere, replace every https://www.adminix.io in this <head>, robots.txt and sitemap.xml. -->
+  <link rel="canonical" href="https://www.adminix.io/">
+  <link rel="alternate" hreflang="en" href="https://www.adminix.io/">
+  <link rel="alternate" hreflang="x-default" href="https://www.adminix.io/">
+
+  <!-- Social share preview (LinkedIn, Facebook, Slack, X) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Adminix">
-  <meta property="og:url" content="https://adminix.example/">
-  <meta property="og:title" content="From product data to ready promotional posters — in hours, not days.">
-  <meta property="og:description" content="Data-connected, brand-compliant creative automation for retail chains.">
-  <meta property="og:image" content="https://adminix.example/assets/og-image.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://www.adminix.io/">
+  <meta property="og:title" content="From product data to ready promotional posters, in hours, not days">
+  <meta property="og:description" content="Brand-compliant, AI-validated in-store posters from your product data. Creative automation for retail chains.">
+  <meta property="og:image" content="https://www.adminix.io/assets/og-image.png">
+  <meta property="og:image:secure_url" content="https://www.adminix.io/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Adminix: in hours, not days. From product data to ready promotional posters.">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="From product data to ready promotional posters, in hours, not days">
+  <meta name="twitter:description" content="Brand-compliant, AI-validated in-store posters from your product data. Creative automation for retail chains.">
+  <meta name="twitter:image" content="https://www.adminix.io/assets/og-image.png">
+  <meta name="twitter:image:alt" content="Adminix: in hours, not days. From product data to ready promotional posters.">
 
-  <link rel="icon" href="assets/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="assets/logo-mark.png">
+  <!-- Structured data for Google: organization, site, product and FAQ. Keep the FAQ answers in sync with the visible FAQ. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.adminix.io/#org",
+        "name": "Adminix",
+        "url": "https://www.adminix.io/",
+        "logo": "https://www.adminix.io/assets/logo-mark.png",
+        "email": "contact@adminix.io",
+        "sameAs": [
+          "https://www.linkedin.com/company/adminix-io/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.adminix.io/#website",
+        "url": "https://www.adminix.io/",
+        "name": "Adminix",
+        "publisher": {
+          "@id": "https://www.adminix.io/#org"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.adminix.io/#webpage",
+        "url": "https://www.adminix.io/",
+        "name": "Adminix: AI promo posters for retail chains, in hours",
+        "description": "Adminix turns product and promo data into brand-compliant, AI-validated in-store posters in hours, not days. Creative automation for retail chains.",
+        "isPartOf": {
+          "@id": "https://www.adminix.io/#website"
+        },
+        "about": {
+          "@id": "https://www.adminix.io/#software"
+        },
+        "primaryImageOfPage": "https://www.adminix.io/assets/og-image.png",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://www.adminix.io/#software",
+        "name": "Adminix",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Adminix turns product and promo data into brand-compliant, AI-validated in-store posters in hours, not days. Creative automation for retail chains.",
+        "publisher": {
+          "@id": "https://www.adminix.io/#org"
+        },
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Retail chains and e-commerce"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.adminix.io/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which systems does Adminix connect to?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For the pilot, an Excel or CSV export of your promo plan is enough: product names, prices, promo mechanics and images. In production, Adminix connects to your ERP, PIM or promo planning system via API, SFTP or a scheduled export. When prices change in the source, the affected posters are regenerated. No IT project is needed to start."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do posters stay on brand across hundreds of stores?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We set up your templates, fonts, colors, logo rules and legal copy once at onboarding. Those elements are locked: data fills the layout, it never redesigns it. Every A3, A4 and A5 poster follows the same rules in every store."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who checks prices and product names before print?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every poster is AI-validated against your source data and brand guidelines: price, product name and brand rules. Anything that doesn't match is flagged, not exported. Your marketing manager reviews the flags and approves the batch before anything goes to print."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it handle our volume and store network?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Adminix is built for chains producing 100–200+ posters a week, including store- and region-specific variants of the same campaign. Volume grows without adding designers or agency hours."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does our team need design skills?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. One marketing manager runs the whole process: load the data, review what the AI validation flags, approve and export print-ready files."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is our data protected?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your data is used only to produce your posters and is never shared with other clients or used to train models for anyone else. It is hosted in the EU and encrypted in transit and at rest. Access is limited to your team and the Adminix staff supporting your account. We sign an NDA before the pilot and a DPA for production, and delete your data on request."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does implementation take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on your store network, number of templates and how your data is delivered, so we scope it case by case. Every rollout starts with a pilot on one template and one live campaign, so you see output on your own data before committing further."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does pricing work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A subscription with a set number of posters included, then pay per poster beyond that. Cost scales with your volume, and there is no large annual contract to get started."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="/assets/favicon.png" type="image/png" sizes="64x64">
+  <link rel="icon" href="/assets/logo-mark.png" type="image/png" sizes="256x256">
+  <link rel="apple-touch-icon" href="/assets/logo-mark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
