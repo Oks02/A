@@ -6,7 +6,11 @@ A single-page marketing site. It's plain HTML, CSS and JS: no framework, no buil
 index.html          page markup
 styles.css          all styles (design tokens at the top under :root)
 main.js             scroll reveals, sticky mobile CTA, form submit
-assets/favicon.png   browser tab icon (logo mark only)
+favicon.ico         browser tab icon (16/32/48 px), at the root where browsers and Google look first
+site.webmanifest    app name and icons for Android home screens
+assets/favicon-96.png       sharper tab icon (Google uses multiples of 48 px)
+assets/apple-touch-icon.png 180 px iPhone home-screen icon on white
+assets/icon-192.png, icon-512.png  Android icons on white
 assets/logo.png      full logo, transparent
 assets/logo-mark.png 256px mark for home-screen icons
 assets/og-image.png 1200×630 social share image (LinkedIn / Instagram / Slack previews)
@@ -44,7 +48,7 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 | 5 | **FAQ: data protection** (drafted, verify): EU hosting, encryption in transit and at rest, access limited to client team and Adminix support staff, NDA before pilot, DPA for production, deletion on request, no training models for other clients | FAQ (`VERIFY(data-policy)`) |
 | 5a | **FAQ: integrations** (drafted, verify): ERP, PIM or promo planning system via API, SFTP or scheduled export; affected posters regenerate on price change | FAQ (`VERIFY(integrations)`) |
 | 6 | **Domain**: set to `https://www.adminix.io`. If the page lives at another URL, replace it everywhere in the `<head>` (canonical, Open Graph, Twitter, JSON-LD), `robots.txt` and `sitemap.xml`. `og:image` **must** stay an absolute URL for LinkedIn | `<head>` (`domain`) |
-| 8 | **Logo**: uses the older Adminix logo (`assets/logo.png`, made transparent and cropped from the PNG you supplied), on a white label in the header and footer. When the new logo is ready, replace `assets/logo.png`, `assets/logo-mark.png` (icon) and `assets/favicon.png`; prefer SVG if you have it, and update the `width`/`height` on the two `<img>` tags. Re-render the OG image too | `logo` |
+| 8 | **Logo**: uses the older Adminix logo (`assets/logo.png`, made transparent and cropped from the PNG you supplied), on a white label in the header and footer. When the new logo is ready, replace `assets/logo.png`, `assets/logo-mark.png` (icon), then regenerate `favicon.ico` and the icon PNGs listed at the top; prefer SVG if you have it, and update the `width`/`height` on the two `<img>` tags. Re-render the OG image too | `logo` |
 
 Also check:
 - **Case study:** the Fozzy Group section was removed until the contract is signed. When it is (and they approve being named), it can come back between Use cases and Who it's for, with real metrics and a quote; it's in git history (commit before "Remove Fozzy case study").
