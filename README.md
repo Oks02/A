@@ -42,7 +42,6 @@ In the code, each item is marked with an HTML comment `PLACEHOLDER(...)`. Run `g
 | 5 | **FAQ: data protection** (drafted, verify): EU hosting, encryption in transit and at rest, access limited to client team and Adminix support staff, NDA before pilot, DPA for production, deletion on request, no training models for other clients | FAQ (`VERIFY(data-policy)`) |
 | 5a | **FAQ: integrations** (drafted, verify): ERP, PIM or promo planning system via API, SFTP or scheduled export; affected posters regenerate on price change | FAQ (`VERIFY(integrations)`) |
 | 6 | **Domain**: replace `https://adminix.example` in the canonical, `og:url` and `og:image` tags. `og:image` **must** be an absolute URL for LinkedIn | `<head>` (`domain`) |
-| 7 | **Contact**: email is `contact@adminix.io`; add the real LinkedIn URL | Footer (`contact`) |
 | 8 | **Logo**: uses the older Adminix logo (`assets/logo.png`, made transparent and cropped from the PNG you supplied), on a white label in the header and footer. When the new logo is ready, replace `assets/logo.png`, `assets/logo-mark.png` (icon) and `assets/favicon.png`; prefer SVG if you have it, and update the `width`/`height` on the two `<img>` tags. Re-render the OG image too | `logo` |
 
 Also check:
