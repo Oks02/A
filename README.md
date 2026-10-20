@@ -24,11 +24,15 @@ Follows the standard B2B SaaS landing order: hero → social proof (ticker) → 
 
 ## Run locally
 
+Needs [Node.js](https://nodejs.org) (any current LTS). From this folder:
+
 ```bash
-python3 -m http.server 8000   # or: npx serve .
+npx serve . -l 8000
 ```
 
 Open http://localhost:8000. To outline every placeholder in pink, open **http://localhost:8000/?placeholders**.
+
+There's nothing to install or build: `npx` fetches the `serve` static server on first run. The site itself is plain HTML, CSS and JS.
 
 ## Deploy
 
