@@ -82,4 +82,4 @@ If the landing page replaces an existing page on adminix.io, set up a 301 redire
 
 ## Customizing
 
-- **Colors and fonts:** the tokens at the top of `styles.css`. Calm enterprise palette: `--signal` (deep Adminix navy-blue) for the hero, How it works and final CTA bands; white and light-gray content sections; `--accent` (Adminix blue) for labels and focus states; `--tag` (warm amber) only for primary buttons, the hanging price tag and the Adminix highlights. Headlines use Archivo at a condensed width; labels and data use JetBrains Mono. The red inside the sample posters is the sample retailer's color, not Adminix's.
+- **Colors and fonts:** the tokens at the top of `styles.css`, matching the adminix.io look: light gray page (`--bg`), white rounded cards with soft shadows, Adminix blue (`--blue`, #2563EB) for buttons, pill labels and highlights, and dark navy (`--navy`) for the "With Adminix" and AI-validation panels. Headings use Inter Tight in Title Case, body text uses Inter. The red and yellow inside the sample posters are the sample retailer's colors, not Adminix's.
